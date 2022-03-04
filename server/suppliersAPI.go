@@ -20,7 +20,7 @@ type Suppliers struct {
 	//so that we can put and post this other_details as well :)
 }
 
-func getAllSupplier(w http.ResponseWriter, r *http.Request) {
+func getAllSuppliers(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var suppliers []Suppliers
 	e := db.Find(&suppliers).Error

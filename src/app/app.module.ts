@@ -25,12 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
-
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddCustomerComponent } from './customer-table/add-customer/add-customer.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +45,7 @@ import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier
     ForgotPasswordComponent,
     AddCustomerComponent,
     AddSupplierComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,

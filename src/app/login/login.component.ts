@@ -18,9 +18,11 @@ export class LoginComponent implements OnInit {
     })
   }
   login(){
-    this.http.get<any>("http://localhost:3000")
+    console.log(this.loginForm.value.email)
+    this.http.get<any>("http://localhost:8085/")
     .subscribe(res=>{
       const user = res.find((a:any)=>{
+        console.log(this.loginForm.value.email)
         return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
       });
       if(user){
