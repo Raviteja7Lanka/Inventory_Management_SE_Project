@@ -18,4 +18,7 @@ export class AddCustomerComponent implements OnInit {
       emailId: ['', Validators.required],
     });
   }
+  customerAdd() {
+    console.log(this.addCustomerForm.value);
+  }
 }
