@@ -4,10 +4,13 @@
     <button mat-raised-button color="primary" (click)="add_customer()">
       Add Customer
     </button>
-    <button mat-raised-button color="primary">Delete Customer</button>
-    <button mat-raised-button color="primary">Edit Customer</button>
+    <button mat-raised-button color="primary" (click)="delete_customer()">
+      Delete Customer
+    </button>
+    <button mat-raised-button color="primary" (click)="edit_customer()">
+      Edit Customer
+    </button>
   </div>
-  <div class=""></div>
   <table class="table" mat-table [dataSource]="datasource">
     <!-- Supplier Id Column -->
     <ng-container matColumnDef="customerId">

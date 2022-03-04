@@ -31,6 +31,10 @@ import { AddCustomerComponent } from './customer-table/add-customer/add-customer
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier.component';
+import { DeleteSupplierComponent } from './supplier-table/delete-supplier/delete-supplier.component';
+import { EditSupplierComponent } from './supplier-table/edit-supplier/edit-supplier.component';
+import { DeleteCustomerComponent } from './customer-table/delete-customer/delete-customer.component';
+import { EditCustomerComponent } from './customer-table/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier
     ForgotPasswordComponent,
     AddCustomerComponent,
     AddSupplierComponent,
+    DeleteSupplierComponent,
+    EditSupplierComponent,
+    DeleteCustomerComponent,
+    EditCustomerComponent,
   ],
   imports: [
     BrowserModule,
