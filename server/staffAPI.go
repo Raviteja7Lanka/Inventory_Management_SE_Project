@@ -37,13 +37,14 @@ func getAllStaff(w http.ResponseWriter, r *http.Request) {
 }
 
 func getStaffByID(w http.ResponseWriter, r *http.Request) {
-	var staff []Staff
-	// db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
+	var staff Staff
+	queryParams := mux.Vars(r)
+	db.Raw("select STAFFS_ID, FIRST_NAME, LAST_NAME, ADDRESS, PHONE, EMAIL, USERNAME, PASSWORD, ROLE_ID From STAFFS where USERNAME=?", queryParams["staffId"]).Scan(&staff)
 	// data,_:= json.Marshal(&order)
 	// fmt.Fprint(w, string(data))
-	queryParams := mux.Vars(r)
+
 	fmt.Println(queryParams["staffId"])
-	db.First(&staff, queryParams["staffId"])
+	// db.First(&staff, queryParams["staffId"])
 	e := json.NewEncoder(w).Encode(staff)
 	if e != nil {
 		sendErr(w, http.StatusInternalServerError, err.Error())
