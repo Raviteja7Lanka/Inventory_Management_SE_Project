@@ -31,7 +31,7 @@
 
 
 ## UI Demo
-[Link to video](https://youtu.be/1reyv-ckDNU)
+[Link to video](https://www.youtube.com/watch?v=2KdnLYBD05U)
 
 ## Backend Demo
 [Link to video](https://youtu.be/7t3zbaAwJ1s)
