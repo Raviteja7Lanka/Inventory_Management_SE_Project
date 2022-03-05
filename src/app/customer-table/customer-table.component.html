@@ -1,10 +1,20 @@
 <!-- Customer Component works -->
 <div class="customer-container">
   <div class="customer-nav">
-    <button mat-raised-button color="primary" (click)="add_customer()">
+    <button
+      id="add_customer"
+      mat-raised-button
+      color="primary"
+      (click)="add_customer()"
+    >
       Add Customer
     </button>
-    <button mat-raised-button color="primary" (click)="delete_customer()">
+    <button
+      id="delete_customer"
+      mat-raised-button
+      color="primary"
+      (click)="delete_customer()"
+    >
       Delete Customer
     </button>
     <button mat-raised-button color="primary" (click)="edit_customer()">

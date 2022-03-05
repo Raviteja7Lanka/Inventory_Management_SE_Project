@@ -20,7 +20,6 @@ export class SupplierTableComponent implements OnInit {
     'address',
     'phone',
     'email',
-    'fax',
     'otherDetails',
   ];
 
@@ -56,7 +55,7 @@ export interface suppliers {
   address: string;
   phone: number;
   email: string;
-  fax: number;
+  // fax: number;
   otherDetails: string;
 }
 
@@ -67,7 +66,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -76,7 +75,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -85,7 +84,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -94,7 +93,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
 ];

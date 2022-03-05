@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from '../../services/api.service';
 import { DialogRole, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -28,6 +28,7 @@ export class AddSupplierComponent implements OnInit {
 
   addSupplier() {
     if (this.addSupplierForm.valid) {
+      console.log(this.addSupplierForm.value);
       this.api.postSupplier(this.addSupplierForm.value).subscribe({
         next: (res) => {
           alert('Supplier Added Successfully');
