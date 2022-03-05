@@ -33,8 +33,15 @@
 </div>
 
 <div mat-dialog-actions [align]="'end'">
-  <button mat-raised-button color="primary" mat-dialog-close>
+  <button mat-raised-button color="primary" (click)="customerAdd()">
     Add Customer
   </button>
-  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  <button
+    id="addCustomerFormCancel"
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+  >
+    Cancel
+  </button>
 </div>

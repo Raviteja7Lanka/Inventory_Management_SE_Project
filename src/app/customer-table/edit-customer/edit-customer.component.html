@@ -1,6 +1,26 @@
-<h1 mat-dialog-title>Please Enter the Supplier Details</h1>
+<h1 mat-dialog-title>Please Enter the Customer Details You want to Update</h1>
 <div mat-dialog-content>
-  <form [formGroup]="addSupplierForm">
+  <form [formGroup]="editCustomerForm">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput placeholder="First Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput placeholder="Last Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email Address</mat-label>
+      <input formControlName="emailId" matInput placeholder="email id " />
+    </mat-form-field>
+  </form>
+</div>
+
+<h2 mat-dialog-title>Please Enter the Updates Below</h2>
+<div mat-dialog-content>
+  <form [formGroup]="editCustomerForm">
     <mat-form-field appearance="outline">
       <mat-label>First Name</mat-label>
       <input formControlName="firstName" matInput placeholder="First Name" />
@@ -33,15 +53,8 @@
 </div>
 
 <div mat-dialog-actions [align]="'end'">
-  <button mat-raised-button color="primary" (click)="addSupplier()">
-    Add Supplier
+  <button mat-raised-button color="primary" (click)="edit_customer()">
+    Edit Customer
   </button>
-  <button
-    id="addSupplierFormCancel"
-    mat-raised-button
-    color="warn"
-    mat-dialog-close
-  >
-    Cancel
-  </button>
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
 </div>

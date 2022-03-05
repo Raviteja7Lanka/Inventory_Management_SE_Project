@@ -1,6 +1,6 @@
-<h1 mat-dialog-title>Please Enter the Supplier Details</h1>
+<h1 mat-dialog-title>Please Enter the Customer Details</h1>
 <div mat-dialog-content>
-  <form [formGroup]="addSupplierForm">
+  <form [formGroup]="deleteCustomerForm">
     <mat-form-field appearance="outline">
       <mat-label>First Name</mat-label>
       <input formControlName="firstName" matInput placeholder="First Name" />
@@ -12,20 +12,6 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Address</mat-label>
-      <input
-        formControlName="address"
-        matInput
-        placeholder="Please Include Zipcode"
-      />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Phone Number</mat-label>
-      <input formControlName="phoneNum" matInput placeholder="Mobile Number " />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
       <mat-label>Email Address</mat-label>
       <input formControlName="emailId" matInput placeholder="email id " />
     </mat-form-field>
@@ -33,11 +19,11 @@
 </div>
 
 <div mat-dialog-actions [align]="'end'">
-  <button mat-raised-button color="primary" (click)="addSupplier()">
-    Add Supplier
+  <button mat-raised-button color="primary" (click)="delete_customer()">
+    Delete Customer
   </button>
   <button
-    id="addSupplierFormCancel"
+    id="cancelDeleteCustomerForm"
     mat-raised-button
     color="warn"
     mat-dialog-close

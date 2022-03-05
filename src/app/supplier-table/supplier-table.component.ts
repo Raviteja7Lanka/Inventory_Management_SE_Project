@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AddSupplierComponent } from './add-supplier/add-supplier.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ApiService } from '../services/api.service';
+import { DeleteSupplierComponent } from './delete-supplier/delete-supplier.component';
+import { EditSupplierComponent } from './edit-supplier/edit-supplier.component';
 
 @Component({
   selector: 'app-supplier-table',
@@ -8,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./supplier-table.component.css'],
 })
 export class SupplierTableComponent implements OnInit {
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private api: ApiService) {}
 
   ngOnInit(): void {}
   displayedColumns = [
@@ -17,7 +20,6 @@ export class SupplierTableComponent implements OnInit {
     'address',
     'phone',
     'email',
-    'fax',
     'otherDetails',
   ];
 
@@ -27,6 +29,23 @@ export class SupplierTableComponent implements OnInit {
     });
   }
 
+  delete_supplier() {
+    this.dialog.open(DeleteSupplierComponent, {
+      width: '40%',
+    });
+  }
+
+  edit_supplier() {
+    this.dialog.open(EditSupplierComponent, {
+      width: '40%',
+    });
+  }
+
+  /* 
+   <--------------- After Getting the API, Comment out the below code ----------------> 
+   datasource=this.api.get
+  
+  */
   datasource = supplierData;
 }
 
@@ -36,7 +55,7 @@ export interface suppliers {
   address: string;
   phone: number;
   email: string;
-  fax: number;
+  // fax: number;
   otherDetails: string;
 }
 
@@ -47,7 +66,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -56,7 +75,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -65,7 +84,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -74,7 +93,7 @@ const supplierData: suppliers[] = [
     address: 'abcaddress',
     phone: 12345,
     email: 'abc@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
 ];
