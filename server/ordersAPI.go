@@ -36,6 +36,8 @@ func sendErr(w http.ResponseWriter, code int, message string) {
 
 func getAllCustomerOrders(w http.ResponseWriter, r *http.Request){
     w.Header().Set("Content-Type","application/json")
+    w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Methods", "GET")
     var orders []Orders
     e:= db.Find(&orders).Error
     if e != nil {

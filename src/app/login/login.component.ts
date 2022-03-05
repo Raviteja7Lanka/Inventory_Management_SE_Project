@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms'
 import { Router } from '@angular/router';
@@ -19,22 +19,33 @@ export class LoginComponent implements OnInit {
   }
   login(){
     console.log(this.loginForm.value.email)
-    this.http.get<any>("http://localhost:8085/")
-    .subscribe(res=>{
-      const user = res.find((a:any)=>{
-        console.log(this.loginForm.value.email)
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-      });
-      if(user){
+    let uname= this.loginForm.value.email
+    let pass= this.loginForm.value.password
+    let user= uname.split('@')
+    const httpOptions={
+      headers: new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Methods': 'GET'
+        }
+      )
+    } ;
+    // this.http.get<any>("http://localhost:8085/staff/"+user[0],httpOptions)
+    // .subscribe(res=>{
+    //   const user = res.find((a:any)=>{
+    //     console.log(this.loginForm.value.email)
+    //     return a.username === user[0] && a.password === this.loginForm.value.password
+    //   });
+
+    if(user[0]==="SMADIPADI" && pass==="SMADIPADI")
+    {
         alert("Login Success");
         this.loginForm.reset();
-        this.router.navigate(['my-navbar'])
+        this.router.navigate(['/home'])
       }else{
         alert("user not found");
 
-      }
-    },err=>{
-      alert("something went wrong")
-    })
+    }
   }
 }
