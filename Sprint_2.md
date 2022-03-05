@@ -7,7 +7,12 @@
 - Performed the Cypress Testing for the components 
 - Perfomed the Unit Test Cases on the base components present in the project 
 
+### Result of the Cypress Test
 ![image](https://user-images.githubusercontent.com/78529687/156867691-9f705afb-ff72-4dbc-9c76-f8134d34f922.png)
+
+## Result of the Unit Test Cases
+![image](https://user-images.githubusercontent.com/78529687/156867805-f34db55b-00b9-4573-abae-0b2eb8988717.png)
+
 
 
 ## Backend 
