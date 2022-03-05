@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 @Component({
   selector: 'app-customer-table',
@@ -23,6 +25,18 @@ export class CustomerTableComponent implements OnInit {
 
   add_customer() {
     this.dialog.open(AddCustomerComponent, {
+      width: '40%',
+    });
+  }
+
+  delete_customer() {
+    this.dialog.open(DeleteCustomerComponent, {
+      width: '40%',
+    });
+  }
+
+  edit_customer() {
+    this.dialog.open(EditCustomerComponent, {
       width: '40%',
     });
   }
