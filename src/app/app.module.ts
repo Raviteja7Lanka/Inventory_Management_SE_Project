@@ -25,12 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
-
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddCustomerComponent } from './customer-table/add-customer/add-customer.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier.component';
+import { ProductsComponent } from './products/products.component';
 import { DeleteSupplierComponent } from './supplier-table/delete-supplier/delete-supplier.component';
 import { EditSupplierComponent } from './supplier-table/edit-supplier/edit-supplier.component';
 import { DeleteCustomerComponent } from './customer-table/delete-customer/delete-customer.component';
@@ -49,6 +49,7 @@ import { EditCustomerComponent } from './customer-table/edit-customer/edit-custo
     ForgotPasswordComponent,
     AddCustomerComponent,
     AddSupplierComponent,
+    ProductsComponent,
     DeleteSupplierComponent,
     EditSupplierComponent,
     DeleteCustomerComponent,
