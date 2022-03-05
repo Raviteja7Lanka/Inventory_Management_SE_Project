@@ -16,6 +16,4 @@ func TestRootEndPoint(t *testing.T) {
 	response := httptest.NewRecorder()
 	router.ServeHTTP(response, request)
 	assert.Equal(t, 200, response.Code, "OK response is expected")
-	//fmt.Println(response.Body)
-	//assert.Equal(t, "Hello World", response.Body.String(), "Hello world message is expected")
 }
