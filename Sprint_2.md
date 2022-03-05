@@ -1,7 +1,13 @@
 # Sprint 2 - Progress in  Sprint 2
 
 ## Frontend
-- Created sign-in and sign-up page.
+- Developed Login Page with authentication service
+- Devloped Sign Up Page to register the new user  
+- Developed the proposed functionalities in the Supplier and Customer Components 
+- Performed the Cypress Testing for the components 
+- Perfomed the Unit Test Cases on the base components present in the project 
+
+![image](https://user-images.githubusercontent.com/78529687/156867691-9f705afb-ff72-4dbc-9c76-f8134d34f922.png)
 
 
 ## Backend 
