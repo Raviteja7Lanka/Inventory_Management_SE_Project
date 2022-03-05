@@ -52,25 +52,51 @@ TO get all the existing records of the Orders table
 ```java
 GET    http://localhost:8085/customer/orders/all
 ```
-Body:
-```java
-{
-    "username":"",
-    "password":"123456",
-    "addressLine1":"",
-    "addressLine2":"1",
-    "phone":"",
-    "email":".com"
-}
 ```
 #### *Example Response*
 
 ```java
 
 {
-    
-}
-
+        "order_id": 14,
+        "date_of_order": "01/25/2022",
+        "order_details_id": "",
+        "customer_id": 1,
+        "supplier_id": 0,
+        "status": ""
+    },
+    {
+        "order_id": 16,
+        "date_of_order": "01/29/2022",
+        "order_details_id": "",
+        "customer_id": 2,
+        "supplier_id": 0,
+        "status": ""
+    },
+    {
+        "order_id": 15,
+        "date_of_order": "01/15/2022",
+        "order_details_id": "",
+        "customer_id": 1,
+        "supplier_id": 0,
+        "status": ""
+    },
+    {
+        "order_id": 23,
+        "date_of_order": "01/25/2022",
+        "order_details_id": "",
+        "customer_id": 1,
+        "supplier_id": 0,
+        "status": "o"
+    },
+    {
+        "order_id": 230,
+        "date_of_order": "02/25/2022",
+        "order_details_id": "",
+        "customer_id": 10,
+        "supplier_id": 10,
+        "status": "o"
+    }
 ```
 
 
@@ -84,16 +110,13 @@ To get a specific record from orders table which is identified by its id(orders_
 #### *Example Request*
 
 ```java
-GET    http://localhost:8085/customer/order/1
+GET    http://localhost:8085/customer/order/14
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    
-}
+{"order_id":14,"date_of_order":"01/25/2022","order_details_id":"","customer_id":1,"supplier_id":0,"status":""}
 ```
 
 
@@ -108,16 +131,23 @@ TO add a record to the order table
 
 ```java
 POST    http://localhost:8085/customer/orders/add
+
+Body
+
+{
+        "order_id": 10,
+        "date_of_order": "01/25/2022",
+        "order_details_id": "1",
+        "customer_id": 1,
+        "supplier_id": 0,
+        "status": "1"
+    }
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+Status 200 OK
 ```
 
 ### 4. updateCustomerOrder
@@ -131,16 +161,23 @@ TO modify an existing record in the order table
 
 ```java
 PUT    http://localhost:8085/customer/orders/{ordId}
+
+{
+        "order_id": 10,
+        "date_of_order": "01/25/2022",
+        "order_details_id": "changed by put",
+        "customer_id": 1,
+        "supplier_id": 0,
+        "status": "1"
+    }
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+Status: 200 OK
+
+{"order_id":10,"date_of_order":"01/25/2022","order_details_id":"changed by put","customer_id":1,"supplier_id":0,"status":"1"}
 ```
 
 ### 5. deleteCustomerOrder
@@ -153,17 +190,13 @@ TO delete an existing record in the order table
 #### *Example Request*
 
 ```java
-DELETE    http://localhost:8085/customer/orders/{ordId}
+DELETE    http://localhost:8085/customer/orders/10
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+"{Status:200, Message: Deletion successful}"
 ``
 
 
@@ -181,24 +214,37 @@ TO get all the existing records of the Customers table
 ```java
 GET    http://localhost:8085//customer/all
 ```
-Body:
-```java
-{
-    "username":"",
-    "password":"123456",
-    "addressLine1":"",
-    "addressLine2":"1",
-    "phone":"",
-    "email":".com"
-}
 ```
 #### *Example Response*
 
 ```java
-
 {
-    
-}
+        "customer_id": 1,
+        "first_name": "SNbyput",
+        "last_name": "MANDAPATI",
+        "address": "GAINESVILLE",
+        "phone": 8489415,
+        "email": "VMANDAPATI@UFL.EDU",
+        "staff_id": 1
+    },
+    {
+        "customer_id": 2,
+        "first_name": "SMADI",
+        "last_name": "MADI",
+        "address": "FLORIDA",
+        "phone": 444855,
+        "email": "SMADI@GMAIL.COM",
+        "staff_id": 2
+    },
+    {
+        "customer_id": 10,
+        "first_name": "Added_by_post",
+        "last_name": "MANDAPATI",
+        "address": "GAINESVILLE",
+        "phone": 8489415,
+        "email": "VMANDAPATI@UFL.EDU",
+        "staff_id": 1
+    }
 
 ```
 
@@ -213,16 +259,21 @@ To get a specific record from Customers table which is identified by its id(cust
 #### *Example Request*
 
 ```java
-GET    http://localhost:8085/customer/{cusId}
+GET    http://localhost:8085/customer/2
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    
-}
+ {
+        "customer_id": 2,
+        "first_name": "SMADI",
+        "last_name": "MADI",
+        "address": "FLORIDA",
+        "phone": 444855,
+        "email": "SMADI@GMAIL.COM",
+        "staff_id": 2
+    }
 ```
 
 
@@ -237,16 +288,22 @@ TO add a record to the Customer table
 
 ```java
 POST    http://localhost:8085/customer/add
+
+{
+        "customer_id": 12,
+        "first_name": "Post_SMADI",
+        "last_name": "MADI",
+        "address": "Gainesville",
+        "phone": 444855,
+        "email": "SMADI@GMAIL.COM",
+        "staff_id": 2
+    }
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+Status: 200 OK
 ```
 
 ### 4. updateCustomer
@@ -259,17 +316,24 @@ TO modify an existing record in the customers table
 #### *Example Request*
 
 ```java
-PUT    http://localhost:8085/customer/{cusId}
+PUT    http://localhost:8085/customer/12
+
+{
+        "customer_id": 12,
+        "first_name": "Modified by Post",
+        "last_name": "MADI",
+        "address": "Gainesville",
+        "phone": 444855,
+        "email": "SMADI@GMAIL.COM",
+        "staff_id": 2
+    }
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+Status: 200 OK
+{"customer_id":12,"first_name":"Modified by Post","last_name":"MADI","address":"Gainesville","phone":444855,"email":"SMADI@GMAIL.COM","staff_id":2}
 ```
 
 ### 5. deleteCustomer
@@ -282,17 +346,13 @@ TO delete an existing record in the Customers table
 #### *Example Request*
 
 ```java
-DELETE    http://localhost:8085/customer/{cusId}
+DELETE    http://localhost:8085/customer/12
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+"{Status:200, Message: Deletion successful}"
 ``
 
 
@@ -309,24 +369,39 @@ TO get all the existing records of the Suppliers table
 ```java
 GET    http://localhost:8085/supplier/all
 ```
-Body:
-```java
-{
-    "username":"",
-    "password":"123456",
-    "addressLine1":"",
-    "addressLine2":"1",
-    "phone":"",
-    "email":".com"
-}
-```
+
 #### *Example Response*
 
 ```java
 
-{
-    
-}
+ {
+        "supplier_id": 0,
+        "name": "",
+        "address": "",
+        "phone": 0,
+        "email": ""
+    },
+    {
+        "supplier_id": 3,
+        "name": "PUBLIX",
+        "address": "488",
+        "phone": 44,
+        "email": "4445"
+    },
+    {
+        "supplier_id": 113,
+        "name": "PUBLIXby_post",
+        "address": "488",
+        "phone": 44,
+        "email": "4445"
+    },
+    {
+        "supplier_id": 1001,
+        "name": "WALMART",
+        "address": "BUTLER PLAZA",
+        "phone": 1526,
+        "email": "WALMART@GMAIL.COM"
+    }
 
 ```
 
@@ -341,16 +416,20 @@ To get a specific record from Suppliers table which is identified by its id(supp
 #### *Example Request*
 
 ```java
-GET    http://localhost:8085/supplier/{supId}
+GET    http://localhost:8085/supplier/1001
+
 ```
 
 #### *Example Response*
 
 ```java
 {
-    "code": 200,
-    
-}
+        "supplier_id": 1001,
+        "name": "WALMART",
+        "address": "BUTLER PLAZA",
+        "phone": 1526,
+        "email": "WALMART@GMAIL.COM"
+    }
 ```
 
 
@@ -366,15 +445,24 @@ TO add a record to the Supplier table
 ```java
 POST    http://localhost:8085/supplier/add
 ```
+```java
+
+{
+        "supplier_id": 99,
+        "name": "I want A",
+        "address": "BUTLER PLAZA",
+        "phone": 1526,
+        "email": "WALMART@GMAIL.COM"
+    }
+```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+Status 200 OK
+
+{"supplier_id":99,"name":"I want A","address":"BUTLER PLAZA","phone":1526,"email":"WALMART@GMAIL.COM"}
+
 ```
 
 ### 4. updateSupplier
@@ -387,17 +475,28 @@ TO modify an existing record in the suppliers table
 #### *Example Request*
 
 ```java
-PUT    http://localhost:8085/supplier/{supId}
+PUT    http://localhost:8085/supplier/99
+{
+        "supplier_id": 99,
+        "name": "I want A_ modified by put",
+        "address": "BUTLER PLAZA",
+        "phone": 1526,
+        "email": "WALMART@GMAIL.COM"
+    }
+
 ```
 
 #### *Example Response*
 
 ```java
+Status 200 OK
 {
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+        "supplier_id": 99,
+        "name": "I want A_ modified by put",
+        "address": "BUTLER PLAZA",
+        "phone": 1526,
+        "email": "WALMART@GMAIL.COM"
+    }
 ```
 
 ### 5. deleteSupplier
@@ -410,367 +509,14 @@ TO delete an existing record in the Suppliers table
 #### *Example Request*
 
 ```java
-DELETE    http://localhost:8085/customer/{cusId}
+DELETE    http://localhost:8085/customer/113
 ```
 
 #### *Example Response*
 
 ```java
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully deleted"
-}
+"{Status:200, Message: Deletion successful}"
 ``
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Rating API
-
-### 1. Rating Create API
-
-```java
-POST    http://localhost:1016/rating/create
-```
-Create a new rating with the provided information
-
-#### *Example Request*
-```java
-POST    http://localhost:1016/rating/create
-```
-Body:
-```java
-{
-    "username": "ZhongkaiSun",
-    "restaurantName": "Popeyes",
-    "star": 5,
-    "comment": "Taste so good !!!!",
-    "ratingDate": "2022/01/06"
-}
-```
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully"
-}
-
-```
-
-#### *Status Codes*
-
-- **200**: No error
-- **422**: Internal Server Error
-
-### 2. Rating GET API
-
-//
-
-
-## Cuisine API
-
-### 1. Cuisine Create API
-
-```java
-POST    http://localhost:1016/cuisine/create
-```
-Create a new cuisine for a restaurant
-
-#### *Example Request*
-```java
-POST    http://localhost:1016/cuisine/create
-```
-Request Body:
-```java
-{
-"name":"banana pie",        
-"restaurantName":"Popeyes", 
-"price":2.0,        
-"calories":3
-}
-```
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully"
-}
-
-```
-
-#### *Status Codes*
-
-- **200**: No error
-- **422**: Internal Server Error
-
-### 2. Cuisine Read API
-
-
-```java
-GET    localhost:1016/cuisine/read?restaurantName=Popeyes
-```
-Read a cuisine from a restaurant
-
-#### *Example Request*
-```java
-GET    http://localhost:1016/cuisine/create
-```
-
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": [
-        {
-            "name": "8PC Nuggets A La Carte",
-            "restaurantName": "Popeyes",
-            "price": 4.79,
-            "calories": 0
-        },
-        {
-            "name": "apple pie",
-            "restaurantName": "Popeyes",
-            "price": 2,
-            "calories": 3
-        },
-        {
-            "name": "banana pie",
-            "restaurantName": "Popeyes",
-            "price": 2,
-            "calories": 3
-        },
-        {
-            "name": "Mixed Chicken",
-            "restaurantName": "Popeyes",
-            "price": 22.79,
-            "calories": 0
-        },
-        {
-            "name": "Red Beans and Rice",
-            "restaurantName": "Popeyes",
-            "price": 4.19,
-            "calories": 0
-        }
-    ],
-    "msg": "Successfully"
-}
-
-```
-
-#### *Status Codes*
-
-- **200**: No error
-- **422**: Internal Server Error
-
-### 3. Cuisine Delete API
-
-```java
-POST    http://localhost:1016/cuisine/delete
-```
-Delete the cuisine from a restaurant
-
-#### *Example Request*
-```java
-POST    http://localhost:1016/cuisine/delete
-```
-Request Body:
-```java
-{
-"name":"banana pie",        
-"restaurantName":"Popeyes", 
-"price":2.0,        
-"calories":3
-}
-```
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully"
-}
-
-```
-
-#### *Status Codes*
-
-- **200**: No error
-- **422**: Internal Server Error
-
-## Order API
-
-### 1. Order Create API
-
-```java
-POST    http://localhost:1016/order/create
-```
-Create a new order for a customer
-
-#### *Example Request*
-```java
-POST    http://localhost:1016/order/create
-```
-Request Body:
-```java
-{
-    "userName":"Raindrop",
-	"restaurantName":"Checkers",
-	"orderDate":"03/02/2022",
-	"price":8.88,
-	"cuisineName":"burger"
-}
-```
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": null,
-    "msg": "Successfully"
-}
-
-```
-
-#### *Status Codes*
-
-- **200**: No error
-- **422**: Internal Server Error
-  
-### 2. Order Read API
-
-```java
-GET    http://localhost:1016/order/read?username=Raindrop
-```
-Create a new cuisine for a restaurant
-
-#### *Example Request*
-```java
-GET    http://localhost:1016/order/read?username=Raindrop
-```
-
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": [
-        {
-            "username": "Raindrop",
-            "restaurantName": "Checkers",
-            "orderDate": "03/02/2022",
-            "price": 8.88,
-            "cuisineName": "burger"
-        }
-    ],
-    "msg": "Successfully"
-}
-
-```
-
-#### *Status Codes*
-
-- **200**: No error
-- **422**: Internal Server Error
-- 
-## Restaurant API
-
-### 1. Restaurant Read API
-```java
-GET    http://localhost:1016/restaurant/read
-```
-Read a restaurant or get the restaurant list 
-
-#### *Example Request*
-```java
-GET    http://localhost:1016/restaurant/read?name=Popeyes
-```
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": {
-        "name": "Popeyes",
-        "address": "1412N Main St, Gainesville, FL 32601, USA",
-        "deliveryFee": 3.99,
-        "imgPath": "",
-        "typeofMeal": "Chicken",
-        "rating": 4.1
-    },
-    "msg": "Successfully"
-}
-
-```
-
-#### *Example Request*
-```java
-GET    http://localhost:1016/restaurant/read
-```
-#### *Example Response*
-
-```java
-
-{
-    "code": 200,
-    "data": [
-        {
-            "name": "Popeyes",
-            "address": "1412N Main St, Gainesville, FL 32601, USA",
-            "deliveryFee": 3.99,
-            "imgPath": "",
-            "typeofMeal": "Chicken",
-            "rating": 4.1
-        },
-        {
-            "name": "Checkers",
-            "address": "3325 W University Ave, Gainesville, FL 32607, USA",
-            "deliveryFee": 1.99,
-            "imgPath": "",
-            "typeofMeal": "Burgers",
-            "rating": 4.2
-        }
-    ],
-    "msg": "Successfully"
-}
-
-```
-
-#### *Status Codes*
-
-- **200**: No error
-- **422**: Internal Server Error
+- Similarly the Payments, Products have that functionality.
 
