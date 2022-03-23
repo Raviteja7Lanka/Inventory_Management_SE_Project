@@ -2,7 +2,7 @@
 
 FrontEnd Team: Ravi Teja Lanka, Nithin Meela 
 
-BackEnd Team: Surya Mandapti, Sai Kiran Madiapadige
+BackEnd Team: Surya Mandapti, Sai Kiran Madipadige
 
 ## Frontend
 - Developed Login Page with authentication service
