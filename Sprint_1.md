@@ -1,5 +1,9 @@
 # Sprint:1 Summary
 
+FrontEnd Team: Ravi Teja Lanka, Nithin Meela
+BackEnd Team: Surya Mandapati, Sai Kiran Madipadige
+
+
 ## Front-end Ui Tasked Implemented -(Angular)
 - Completed the initial setup required for angular webapp.
 - Designed and developed the landing page of the inventory management website and added CSS.
