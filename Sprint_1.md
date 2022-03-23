@@ -1,6 +1,7 @@
 # Sprint:1 Summary
 
 FrontEnd Team: Ravi Teja Lanka, Nithin Meela
+
 BackEnd Team: Surya Mandapati, Sai Kiran Madipadige
 
 
