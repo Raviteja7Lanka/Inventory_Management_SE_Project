@@ -1,5 +1,9 @@
 # Sprint 2 - Progress in  Sprint 2
 
+FrontEnd Team: Ravi Teja Lanka, Nithin Meela 
+
+BackEnd Team: Surya Mandapti, Sai Kiran Madiapadige
+
 ## Frontend
 - Developed Login Page with authentication service
 - Devloped Sign Up Page to register the new user  
