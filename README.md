@@ -7,6 +7,14 @@ Sai Kiran Madipadige.
 Surya Mandapati. 
 Nithin Meela.
 
+FrontEnd:
+Ravi Teja Lanka.
+Nithin Meela
+
+BackEnd:
+Surya Mandapati
+Sai Kiran Madipadige
+
 Stack:
 Front-end: Angular 2.0 
 Back-end: Golang.
