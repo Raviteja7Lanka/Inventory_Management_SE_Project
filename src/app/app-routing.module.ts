@@ -11,12 +11,17 @@ import { SupplierTableComponent } from './supplier-table/supplier-table.componen
 import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
 import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ProductsComponent } from './products/products.component';
+import { ReportsComponent } from './reports/reports.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
-  { path: '',redirectTo: '/login',pathMatch: 'full'},
-  { path:'login', component:LoginComponent},
-  { path:'signup',component:SignupComponent},
-  { path:'forgot-password',component:ForgotPasswordComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+
   {
     path:'',
     component:MyNavbarComponent,
@@ -28,13 +33,18 @@ const routes: Routes = [
        { path: 'home',component:HomeComponent},
        { path: 'warehouse',component:WarehouseComponent},
        { path: 'warehouse-create',component:WarehouseCreateComponent},
-       { path: 'warehouse-update',component:WarehouseUpdateComponent}
+       { path: 'warehouse-update',component:WarehouseUpdateComponent},
+       { path: 'orders', component: OrdersComponent },
+       { path: 'products', component: ProductsComponent },
+        { path:'reports', component: ReportsComponent },
+        { path: 'about', component: AboutComponent },
     ]
   }
+    
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -19,7 +19,7 @@ export class CustomerTableComponent implements OnInit {
     'address',
     'phone',
     'email',
-    'fax',
+    // 'fax',
     'otherDetails',
   ];
 
@@ -50,7 +50,7 @@ export interface customers {
   address: string;
   phone: number;
   email: string;
-  fax: number;
+  // fax: number;
   otherDetails: string;
 }
 
@@ -61,7 +61,7 @@ const customerData: customers[] = [
     address: '4000 SW 37TH BLVD',
     phone: 12345568,
     email: 'ravi@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -70,7 +70,7 @@ const customerData: customers[] = [
     address: '3800 SW 35TH BLVD',
     phone: 76543245,
     email: 'surya@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
   {
@@ -79,7 +79,7 @@ const customerData: customers[] = [
     address: '3999 SW 40TH BLVD',
     phone: 19999454,
     email: 'aditya@gmail.com',
-    fax: 9999,
+    // fax: 9999,
     otherDetails: 'nothing',
   },
   {
@@ -88,7 +88,7 @@ const customerData: customers[] = [
     address: '4002 SW 49TH BLVD',
     phone: 10000345,
     email: 'saikiran@gmail.com',
-    fax: 123456,
+    // fax: 123456,
     otherDetails: 'nothing',
   },
 ];

@@ -17,15 +17,25 @@
   top: 0;
   z-index: 1;
 }
-.spacer{
+.spacer {
   flex: 1 1 auto;
 }
 .card {
   max-width: 200px;
   place-items: center;
   padding-left: 100%;
-  
 }
-.card:hover{
-  box-shadow: 5px 10px 15px 1px rgba(0, 0, 0, 0.258)!important;
+.card:hover {
+  box-shadow: 5px 10px 15px 1px rgba(0, 0, 0, 0.258) !important;
+}
+
+.mat-button:hover {
+  transition: none;
+  color: inherit;
+  background-color: inherit;
+  /* margin-right: 3px; */
+}
+
+.mat-button {
+  margin-right: 3px;
 }

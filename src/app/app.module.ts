@@ -39,6 +39,9 @@ import { ModelsComponent } from './models/models.component';
 import { WarehouseComponent } from './services/warehouse/warehouse.component';
 import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ReportsComponent } from './reports/reports.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-
     WarehouseComponent,
     WarehouseUpdateComponent,
     WarehouseCreateComponent,
+    OrdersComponent,
+    ReportsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
