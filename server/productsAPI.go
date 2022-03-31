@@ -56,7 +56,6 @@ func addProduct(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&products)
 	db.Create(&products)
 	json.NewEncoder(w).Encode(products)
-	// fmt.Println("Hello")
 }
 
 func updateProduct(w http.ResponseWriter, r *http.Request) {
@@ -75,7 +74,6 @@ func deleteProduct(w http.ResponseWriter, r *http.Request) {
 	var products Products
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["prodId"])
-	//db.Raw("delete from Orders where order_id=?", queryParams["ordId"])
 	db.Delete(&products, queryParams["prodId"])
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }

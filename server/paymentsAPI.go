@@ -31,9 +31,6 @@ func getAllPayments(w http.ResponseWriter, r *http.Request) {
 
 func getPaymentsByID(w http.ResponseWriter, r *http.Request) {
 	var payments Payments
-	// db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
-	// data,_:= json.Marshal(&order)
-	// fmt.Fprint(w, string(data))
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["payId"])
 	db.First(&payments, queryParams["payId"])
@@ -49,7 +46,6 @@ func addPayments(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&payments)
 	db.Create(&payments)
 	json.NewEncoder(w).Encode(payments)
-	// fmt.Println("Hello")
 }
 
 func updatePayments(w http.ResponseWriter, r *http.Request) {
@@ -68,7 +64,6 @@ func deletePayments(w http.ResponseWriter, r *http.Request) {
 	var payments Payments
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["payId"])
-	//db.Raw("delete from Orders where order_id=?", queryParams["ordId"])
 	db.Delete(&payments, queryParams["payId"])
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }

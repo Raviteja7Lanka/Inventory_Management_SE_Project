@@ -15,9 +15,6 @@ type Suppliers struct {
 	ADDRESS     string `json:"address"`
 	PHONE       uint   `json:"phone"`
 	EMAIL       string `json:"email"`
-	//OTHER_DETAILS string `json:"staff_id"`
-	// In dataBase, we have OTHER DETAILS....We need to sort this column name
-	//so that we can put and post this other_details as well :)
 }
 
 func getAllSuppliers(w http.ResponseWriter, r *http.Request) {
@@ -36,9 +33,6 @@ func getAllSuppliers(w http.ResponseWriter, r *http.Request) {
 
 func getSupplierByID(w http.ResponseWriter, r *http.Request) {
 	var suppliers Suppliers
-	// db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
-	// data,_:= json.Marshal(&order)
-	// fmt.Fprint(w, string(data))
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["supId"])
 	db.First(&suppliers, queryParams["supId"])
@@ -54,7 +48,6 @@ func addSupplier(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&supplier)
 	db.Create(&supplier)
 	json.NewEncoder(w).Encode(supplier)
-	// fmt.Println("Hello")
 }
 
 func updateSupplier(w http.ResponseWriter, r *http.Request) {
@@ -73,7 +66,6 @@ func deleteSupplier(w http.ResponseWriter, r *http.Request) {
 	var supplier Suppliers
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["supId"])
-	//db.Raw("delete from Orders where order_id=?", queryParams["ordId"])
 	db.Delete(&supplier, queryParams["supId"])
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }
