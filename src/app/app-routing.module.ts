@@ -8,27 +8,36 @@ import { MyNavbarComponent } from './my-navbar/my-navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { SupplierTableComponent } from './supplier-table/supplier-table.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ProductsComponent } from './products/products.component';
+import { ReportsComponent } from './reports/reports.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
-  { path: '',redirectTo: '/login',pathMatch: 'full'},
-  { path:'login', component:LoginComponent},
-  { path:'signup',component:SignupComponent},
-  { path:'forgot-password',component:ForgotPasswordComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+
   {
-    path:'',
-    component:MyNavbarComponent,
-    children:[
-       { path: 'tabs', component: TabsComponent },
-       { path: 'my-navbar', component:MyNavbarComponent},
-       { path: 'supplier-table',component:SupplierTableComponent},
-       { path: 'customer-table',component:CustomerTableComponent},
-       { path: 'home',component:HomeComponent}
-    ]
-  }
+    path: '',
+    component: MyNavbarComponent,
+    children: [
+      { path: 'tabs', component: TabsComponent },
+      { path: 'my-navbar', component: MyNavbarComponent },
+      { path: 'supplier-table', component: SupplierTableComponent },
+      { path: 'customer-table', component: CustomerTableComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'orders', component: OrdersComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'reports', component: ReportsComponent },
+      { path: 'about', component: AboutComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

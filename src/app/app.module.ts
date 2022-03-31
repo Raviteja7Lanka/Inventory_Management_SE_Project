@@ -35,6 +35,9 @@ import { DeleteSupplierComponent } from './supplier-table/delete-supplier/delete
 import { EditSupplierComponent } from './supplier-table/edit-supplier/edit-supplier.component';
 import { DeleteCustomerComponent } from './customer-table/delete-customer/delete-customer.component';
 import { EditCustomerComponent } from './customer-table/edit-customer/edit-customer.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ReportsComponent } from './reports/reports.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { EditCustomerComponent } from './customer-table/edit-customer/edit-custo
     EditSupplierComponent,
     DeleteCustomerComponent,
     EditCustomerComponent,
+    OrdersComponent,
+    ReportsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

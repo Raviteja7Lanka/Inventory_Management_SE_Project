@@ -1,5 +1,26 @@
-
 .mat-toolbar.mat-primary {
+<<<<<<< HEAD
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.card {
+  max-width: 200px;
+}
+.card:hover {
+  box-shadow: 5px 10px 15px 1px rgba(0, 0, 0, 0.258) !important;
+}
+.icon-circle {
+  padding: 5px;
+  background: #3b5998;
+  color: white;
+  min-width: 45px;
+  text-align: center;
+}
+=======
     position: sticky;
     top: 0;
     z-index: 1;
@@ -24,3 +45,4 @@
     min-width: 45px;
     text-align: center;
   }
+>>>>>>> 4b01057f51757203e08f7262fce1954480549d7b

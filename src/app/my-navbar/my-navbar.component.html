@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a mat-list-item routerLink="#">Menu</a> 
+      <a mat-list-item routerLink="#">Menu</a>
       <a mat-list-item routerLink="supplier-table">Supplier</a>
       <a mat-list-item routerLink="customer-table">Customer</a>
       <!-- <a mat-list-item >Company</a> -->
@@ -14,22 +14,21 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <div style="height: 88vh;"></div>
+      <div style="height: 88vh"></div>
       <button mat-icon-button>
-        <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
       </button>
-      <span><mat-icon><span class="material-icons-outlined">
-        inventory_2
-        </span></mat-icon> My Inventory</span>
-        <div class="spacer">
-        
-        </div>
-        <a mat-button routerLink="home" >Home</a>
-        
-         
-      
-        <a mat-raised-button routerLink="/login" color="accent">Logout</a>
-        <!-- <a mat-button>About</a>
+      <span
+        ><mat-icon
+          ><span class="material-icons-outlined"> inventory_2 </span></mat-icon
+        >
+        My Inventory</span
+      >
+      <div class="spacer"></div>
+      <a mat-button routerLink="home">Home</a>
+
+      <a mat-raised-button routerLink="/login" color="accent">Logout</a>
+      <!-- <a mat-button>About</a>
         <a mat-raised-button color="accent">Sign up</a> -->
     </mat-toolbar>
     <!-- Add Content Here -->
