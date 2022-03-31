@@ -38,6 +38,7 @@ import { EditCustomerComponent } from './customer-table/edit-customer/edit-custo
 import { OrdersComponent } from './orders/orders.component';
 import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
+import { CatproductComponent } from './products/catproduct/catproduct.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AboutComponent } from './about/about.component';
     OrdersComponent,
     ReportsComponent,
     AboutComponent,
+    CatproductComponent,
   ],
   imports: [
     BrowserModule,

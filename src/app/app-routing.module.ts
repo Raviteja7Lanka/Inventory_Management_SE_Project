@@ -12,6 +12,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { ProductsComponent } from './products/products.component';
 import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
+import { CatproductComponent } from './products/catproduct/catproduct.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'products', component: ProductsComponent },
       { path: 'reports', component: ReportsComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'catprod', component: CatproductComponent },
     ],
   },
 ];
