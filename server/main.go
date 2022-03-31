@@ -45,11 +45,12 @@ func InitRouter() {
 	router.HandleFunc("/product/{prodId}", updateProduct).Methods("PUT")
 	router.HandleFunc("/product/{prodId}", deleteProduct).Methods("DELETE")
 
-	router.HandleFunc("/payment/all", getAllPayments).Methods("GET")
-	router.HandleFunc("/payment/{payId}", getPaymentsByID).Methods("GET")
-	router.HandleFunc("/payment/add", addPayments).Methods("POST")
-	router.HandleFunc("/payment/{payId}", updatePayments).Methods("PUT")
-	router.HandleFunc("/payment/{payId}", deletePayments).Methods("DELETE")
+	//router.HandleFunc("/payment/all", getAllPayments).Methods("GET")
+	//router.HandleFunc("/payment/{payId}", getPaymentsByID).Methods("GET")
+	//router.HandleFunc("/payment/add", addPayments).Methods("POST")
+	//router.HandleFunc("/payment/{payId}", updatePayments).Methods("PUT")
+	//router.HandleFunc("/payment/{payId}", deletePayments).Methods("DELETE")
+	//routes.RegisterPaymentRoutes(router)
 
 	http.Handle("/", router)
 	log.Fatal(http.ListenAndServe(":8085", nil))
