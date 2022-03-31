@@ -2,9 +2,11 @@ package main
 
 import (
 	"log"
+	// "apis/models"
 	"net/http"
 
-	// "routes"
+	"apis/routes"
+
 	"github.com/gorilla/mux"
 )
 
@@ -17,12 +19,13 @@ func RootEndPoint(response http.ResponseWriter, request *http.Request) {
 
 func InitRouter() {
 	router := mux.NewRouter()
-
-	router.HandleFunc("/customer/orders/all", getAllCustomerOrders).Methods("GET")
-	router.HandleFunc("/customer/order/{ordId}", getCustomerOrderByID).Methods("GET")
-	router.HandleFunc("/customer/orders/{ordId}", updateCustomerOrder).Methods("PUT")
-	router.HandleFunc("/customer/orders/add", addCustomerOrder).Methods("POST")
-	router.HandleFunc("/customer/orders/{ordId}", deleteCustomerOrder).Methods("DELETE")
+	// cust:=&models.Customers{}
+	// router.HandleFunc("/customer/orders/all", getAllCustomerOrders).Methods("GET")
+	// router.HandleFunc("/customer/order/{ordId}", getCustomerOrderByID).Methods("GET")
+	// router.HandleFunc("/customer/orders/{ordId}", updateCustomerOrder).Methods("PUT")
+	// router.HandleFunc("/customer/orders/add", addCustomerOrder).Methods("POST")
+	// router.HandleFunc("/customer/orders/{ordId}", deleteCustomerOrder).Methods("DELETE")
+	routes.RegisterCustomerRoutes(router)
 
 	router.HandleFunc("/supplier/all", getAllSuppliers).Methods("GET")
 	router.HandleFunc("/supplier/{supId}", getSupplierByID).Methods("GET")
