@@ -20,7 +20,16 @@ type Suppliers struct {
 	//so that we can put and post this other_details as well :)
 }
 
+<<<<<<< HEAD
 func getAllSuppliers(w http.ResponseWriter, r *http.Request) {
+<<<<<<< Updated upstream
+=======
+func getAllSupplier(w http.ResponseWriter, r *http.Request) {
+>>>>>>> 18a19f1 (added supplier API)
+=======
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+>>>>>>> Stashed changes
 	w.Header().Set("Content-Type", "application/json")
 	var suppliers []Suppliers
 	e := db.Find(&suppliers).Error
@@ -35,6 +44,8 @@ func getAllSuppliers(w http.ResponseWriter, r *http.Request) {
 }
 
 func getSupplierByID(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	var suppliers Suppliers
 	// db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
 	// data,_:= json.Marshal(&order)
@@ -49,6 +60,8 @@ func getSupplierByID(w http.ResponseWriter, r *http.Request) {
 }
 
 func addSupplier(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json")
 	var supplier Suppliers
 	json.NewDecoder(r.Body).Decode(&supplier)
@@ -58,6 +71,8 @@ func addSupplier(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateSupplier(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	var supplier Suppliers
 	var updatedSupplier Suppliers
 	queryParams := mux.Vars(r)
@@ -70,6 +85,8 @@ func updateSupplier(w http.ResponseWriter, r *http.Request) {
 }
 
 func deleteSupplier(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	var supplier Suppliers
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["supId"])

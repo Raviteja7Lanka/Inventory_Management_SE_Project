@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { MyNavbarComponent } from './my-navbar/my-navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { SupplierTableComponent } from './supplier-table/supplier-table.component';
+import { WarehouseComponent } from './services/warehouse/warehouse.component';
+import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
+import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { TabsComponent } from './tabs/tabs.component';
 
 const routes: Routes = [
@@ -22,7 +25,10 @@ const routes: Routes = [
        { path: 'my-navbar', component:MyNavbarComponent},
        { path: 'supplier-table',component:SupplierTableComponent},
        { path: 'customer-table',component:CustomerTableComponent},
-       { path: 'home',component:HomeComponent}
+       { path: 'home',component:HomeComponent},
+       { path: 'warehouse',component:WarehouseComponent},
+       { path: 'warehouse-update',component:WarehouseUpdateComponent},
+       { path: 'warehouse-create',component:WarehouseCreateComponent}
     ]
   }
 ];

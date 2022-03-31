@@ -23,6 +23,8 @@ type Staff struct {
 }
 
 func getAllStaff(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json")
 	var staff []Staff
 	e := db.Find(&staff).Error
@@ -37,11 +39,27 @@ func getAllStaff(w http.ResponseWriter, r *http.Request) {
 }
 
 func getStaffByID(w http.ResponseWriter, r *http.Request) {
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 	var staff Staff
+=======
+	var staff []Staff
+>>>>>>> 18a19f1 (added supplier API)
 	// db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
 	// data,_:= json.Marshal(&order)
 	// fmt.Fprint(w, string(data))
 	queryParams := mux.Vars(r)
+=======
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	var staff Staff
+	queryParams := mux.Vars(r)
+ 	// uname:= queryParams["staffId"]
+	// db.Raw("select STAFFS_ID,FIRST_NAME, LAST_NAME, ADDRESS, PHONE, EMAIL, USERNAME, PASSWORD, ROLE_ID from STAFFS where USERNAME=?",uname).Scan(&order)
+	// data,_:= json.Marshal(&order)
+	// fmt.Fprint(w, string(data))
+	// queryParams := mux.Vars(r)
+>>>>>>> Stashed changes
 	fmt.Println(queryParams["staffId"])
 	db.First(&staff, queryParams["staffId"])
 	e := json.NewEncoder(w).Encode(staff)
@@ -51,6 +69,8 @@ func getStaffByID(w http.ResponseWriter, r *http.Request) {
 }
 
 func addStaff(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json")
 	var staff Staff
 	json.NewDecoder(r.Body).Decode(&staff)
@@ -60,6 +80,8 @@ func addStaff(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateStaff(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	var staff Staff
 	var updatedStaff Staff
 	queryParams := mux.Vars(r)
@@ -72,6 +94,8 @@ func updateStaff(w http.ResponseWriter, r *http.Request) {
 }
 
 func deleteStaff(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	var staff Staff
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["staffId"])

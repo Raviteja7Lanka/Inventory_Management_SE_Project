@@ -51,6 +51,7 @@ const supplierData: suppliers[] = [
     otherDetails: 'nothing',
   },
   {
+<<<<<<< Updated upstream
     supplierId: 1,
     name: 'ABC',
     address: 'abcaddress',
@@ -77,4 +78,41 @@ const supplierData: suppliers[] = [
     fax: 123456,
     otherDetails: 'nothing',
   },
+=======
+    supplierId: 2,
+    name: 'Aditya',
+    address: '3999 SW 40TH BLVD',
+    phone: 19999454,
+    email: 'aditya@gmail.com',
+    fax: 9999,
+    otherDetails: 'nothing',
+  },
+  {
+    supplierId: 3,
+    name: 'Aditya',
+    address: '3999 SW 40TH BLVD',
+    phone: 19999454,
+    email: 'aditya@gmail.com',
+    fax: 9999,
+    otherDetails: 'nothing',
+  },
+  {
+    supplierId: 4,
+    name: 'Aditya',
+    address: '3999 SW 40TH BLVD',
+    phone: 19999454,
+    email: 'aditya@gmail.com',
+    fax: 9999,
+    otherDetails: 'nothing',
+  },
+  {
+    supplierId: 5,
+    name: 'Nithin',
+    address: '4545 SW 45TH BLVD',
+    phone: 49999454,
+    email: 'meela@gmail.com',
+    fax: 1099,
+    otherDetails: 'nothing',
+  }
+>>>>>>> Stashed changes
 ];

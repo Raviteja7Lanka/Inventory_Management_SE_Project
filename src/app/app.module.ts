@@ -31,6 +31,17 @@ import { AddCustomerComponent } from './customer-table/add-customer/add-customer
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier.component';
+<<<<<<< Updated upstream
+=======
+import { ProductsComponent } from './products/products.component';
+import { DeleteSupplierComponent } from './supplier-table/delete-supplier/delete-supplier.component';
+import { EditSupplierComponent } from './supplier-table/edit-supplier/edit-supplier.component';
+import { DeleteCustomerComponent } from './customer-table/delete-customer/delete-customer.component';
+import { EditCustomerComponent } from './customer-table/edit-customer/edit-customer.component';
+import { WarehouseComponent } from './services/warehouse/warehouse.component';
+import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
+import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -45,6 +56,17 @@ import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier
     ForgotPasswordComponent,
     AddCustomerComponent,
     AddSupplierComponent,
+<<<<<<< Updated upstream
+=======
+    ProductsComponent,
+    DeleteSupplierComponent,
+    EditSupplierComponent,
+    DeleteCustomerComponent,
+    EditCustomerComponent,
+    WarehouseComponent,
+    WarehouseUpdateComponent,
+    WarehouseCreateComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

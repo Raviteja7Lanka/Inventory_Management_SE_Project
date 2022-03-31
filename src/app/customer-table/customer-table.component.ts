@@ -77,4 +77,13 @@ const customerData: customers[] = [
     fax: 123456,
     otherDetails: 'nothing',
   },
+  // {
+  //   customerId: 5,
+  //   name: 'Nithin',
+  //   address: '4545 SW 45TH BLVD',
+  //   phone: 49999454,
+  //   email: 'meela@gmail.com',
+  //   fax: 1099,
+  //   otherDetails: 'nothing',
+  // }
 ];

@@ -9,8 +9,12 @@
                 <form>
                         <form [formGroup]="signupForm" (ngSubmit)="signup()">
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Full Name</label>
-                            <input  formControlName="fullname" type="text" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword1" class="form-label">First Name</label>
+                            <input  formControlName="firstname" type="text" class="form-control" id="exampleInputPassword1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Last Name</label>
+                            <input  formControlName="lastname" type="text" class="form-control" id="exampleInputPassword1">
                           </div>
                           <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Mobile Number</label>

@@ -40,7 +40,11 @@ func sendErr(w http.ResponseWriter, code int, message string) {
 }
 */
 
+<<<<<<< HEAD
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
+=======
+func getAllCustomer(w http.ResponseWriter, r *http.Request) {
+>>>>>>> 18a19f1 (added supplier API)
 	w.Header().Set("Content-Type", "application/json")
 	var customers []Customers
 	e := db.Find(&customers).Error
