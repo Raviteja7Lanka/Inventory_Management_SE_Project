@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Please Enter the Supplier Details</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addSupplierForm">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput placeholder="First Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput placeholder="Last Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input
+        formControlName="address"
+        matInput
+        placeholder="Please Include Zipcode"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input formControlName="phoneNum" matInput placeholder="Mobile Number " />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email Address</mat-label>
+      <input formControlName="emailId" matInput placeholder="email id " />
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="addSupplier()">
+    Add Supplier
+  </button>
+  <button
+    id="addSupplierFormCancel"
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+  >
+    Cancel
+  </button>
+</div>

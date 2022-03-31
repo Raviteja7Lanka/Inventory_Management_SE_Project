@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Please Enter the Customer Details</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addCustomerForm">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput placeholder="First Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput placeholder="Last Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input
+        formControlName="address"
+        matInput
+        placeholder="Please Include Zipcode"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input formControlName="phoneNum" matInput placeholder="Mobile Number " />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email Address</mat-label>
+      <input formControlName="emailId" matInput placeholder="email id " />
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="customerAdd()">
+    Add Customer
+  </button>
+  <button
+    id="addCustomerFormCancel"
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+  >
+    Cancel
+  </button>
+</div>

@@ -1,0 +1,67 @@
+/* @import "@angular/material/prebuilt-themes/deeppurple-amber.css"; */
+
+.supplier-container {
+  height: 50rem;
+  width: 70rem;
+  max-width: 100%;
+  overflow: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.supplier-nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
+
+.table {
+  width: 70rem;
+  border: 5px inset #3f51b5;
+  font-size: 1.4rem;
+  background-color: #fff;
+}
+
+td.mat-column-star {
+  width: 20px;
+  padding-right: 8px;
+}
+
+th.mat-column-position,
+td.mat-column-position {
+  padding-left: 8px;
+}
+
+.mat-table-sticky-border-elem-right {
+  border-left: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky-border-elem-left {
+  border-right: 1px solid #e0e0e0;
+}
+
+.tbheader {
+  font-weight: 700;
+  font-family: serif;
+  font-size: 1rem;
+  color: #3f51b5;
+  padding: 12px 3px;
+}
+
+.tbdata {
+  color: #000;
+  padding: 12px 3px;
+}
+
+th.mat-header-cell {
+  border-bottom: 5px inset #3f51b5;
+  /* border-bottom-color: #3f51b5; */
+}
+
+td.mat-cell {
+  border-bottom: 2px inset;
+  border-bottom-color: #3f51b5;
+}
