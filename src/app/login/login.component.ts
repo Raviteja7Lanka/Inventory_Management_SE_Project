@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms'
 import { Router } from '@angular/router';
@@ -31,6 +31,21 @@ export class LoginComponent implements OnInit {
         }
       )
     } ;
+    this.http.get<any>(`http://localhost:8085/staff/${user[0]}`).subscribe(res => {
+        console.log(res);
+        // this.test = res.total;
+        console.log('in');
+        const user = res.find((a:any)=>{
+              console.log(this.loginForm.value.email)
+              if (a.username === user[0] && a.password === this.loginForm.value.password)
+              {
+                alert("Login Success");
+                this.loginForm.reset();
+                this.router.navigate(['/home']) 
+              }
+            })
+
+    });
     // this.http.get<any>("http://localhost:8085/staff/"+user[0],httpOptions)
     // .subscribe(res=>{
     //   const user = res.find((a:any)=>{
@@ -49,3 +64,4 @@ export class LoginComponent implements OnInit {
     }
   }
 }
+

@@ -19,7 +19,6 @@ func TestGetCustomerOrder(t *testing.T) {
 	var order Orders
 	router.HandleFunc("/customer/order/14", getCustomerOrderByID).Methods("GET")
 	resp, err := http.Get("http://localhost:8085/customer/order/14")
-	//router.ServeHTTP(response, request)
 	if err != nil {
 		fmt.Println("NULL response")
 	}
