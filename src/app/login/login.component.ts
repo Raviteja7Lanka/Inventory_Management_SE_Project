@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms'
 import { Router } from '@angular/router';
@@ -49,3 +49,4 @@ export class LoginComponent implements OnInit {
     }
   }
 }
+
