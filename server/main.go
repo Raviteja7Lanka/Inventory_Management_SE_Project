@@ -7,6 +7,7 @@ import (
 
 	"apis/routes"
 
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -62,11 +63,16 @@ func InitRouter() {
 	//router.HandleFunc("/payment/{payId}", deletePayments).Methods("DELETE")
 
 	routes.RegisterPaymentRoutes(router)
-
+	corsObj := handlers.AllowedOrigins([]string{"http://localhost:4200"})
+	headersOk := handlers.AllowedHeaders([]string{"accept", "origin", "X-Requested-With", "Content-Type", "Authorization"})
+	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"})
+	allowCreds := handlers.AllowCredentials()
+	allowOptions := handlers.OptionStatusCode(204)
 
 	http.Handle("/", router)
 	// log.Fatal(http.ListenAndServe(":8085", nil))
 	log.Fatal(http.ListenAndServe(":8085", handlers.CORS(corsObj, headersOk, methodsOk, allowCreds, allowOptions)(router)))
+
 }
 
 func main() {
