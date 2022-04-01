@@ -104,6 +104,7 @@ import { OutstandingordersComponent } from './orders/outstandingorders/outstandi
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
