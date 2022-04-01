@@ -68,11 +68,9 @@ func InitRouter() {
 	allowCreds := handlers.AllowCredentials()
 	allowOptions := handlers.OptionStatusCode(204)
 
-	router.HandleFunc("/", RootEndPoint).Methods("GET")
-
 	http.Handle("/", router)
-	// log.Fatal(http.ListenAndServe(":8085", nil))
 	log.Fatal(http.ListenAndServe(":8085", handlers.CORS(corsObj, headersOk, methodsOk, allowCreds, allowOptions)(router)))
+
 }
 
 func main() {
