@@ -10,6 +10,9 @@ export class ApiService {
   postSupplier(data: any) {
     return this.http.post<any>('SupplierAPI', data);
   }
+  getAllSuppliers(){
+    return this.http.get<any>('http://localhost:8085/supplier/all')
+  }
   getSupplier() {
     return this.http.get<any>('SupplierAPI');
   }
