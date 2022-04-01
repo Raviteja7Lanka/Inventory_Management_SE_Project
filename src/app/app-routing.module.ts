@@ -6,7 +6,10 @@ import { ForgotPasswordComponent } from './login/forgot-password/forgot-password
 import { LoginComponent } from './login/login.component';
 import { MyNavbarComponent } from './my-navbar/my-navbar.component';
 import { SignupComponent } from './signup/signup.component';
+import { WarehouseComponent } from './services/warehouse/warehouse.component';
 import { SupplierTableComponent } from './supplier-table/supplier-table.component';
+import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
+import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProductsComponent } from './products/products.component';
@@ -21,6 +24,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
 
   {
+
     path: '',
     component: MyNavbarComponent,
     children: [
@@ -34,8 +38,12 @@ const routes: Routes = [
       { path: 'reports', component: ReportsComponent },
       { path: 'about', component: AboutComponent },
       { path: 'catprod', component: CatproductComponent },
+       { path: 'warehouse',component:WarehouseComponent},
+       { path: 'warehouse-create',component:WarehouseCreateComponent},
+       { path: 'warehouse-update',component:WarehouseUpdateComponent},
     ],
   },
+
 ];
 
 @NgModule({

@@ -35,7 +35,11 @@ import { DeleteSupplierComponent } from './supplier-table/delete-supplier/delete
 import { EditSupplierComponent } from './supplier-table/edit-supplier/edit-supplier.component';
 import { DeleteCustomerComponent } from './customer-table/delete-customer/delete-customer.component';
 import { EditCustomerComponent } from './customer-table/edit-customer/edit-customer.component';
+import { WarehouseComponent } from './services/warehouse/warehouse.component';
+import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
+import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
 import { OrdersComponent } from './orders/orders.component';
+
 import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
 import { CatproductComponent } from './products/catproduct/catproduct.component';
@@ -61,6 +65,9 @@ import { EditproductComponent } from './products/catproduct/editproduct/editprod
     EditSupplierComponent,
     DeleteCustomerComponent,
     EditCustomerComponent,
+    WarehouseComponent,
+    WarehouseUpdateComponent,
+    WarehouseCreateComponent,
     OrdersComponent,
     ReportsComponent,
     AboutComponent,
@@ -91,6 +98,7 @@ import { EditproductComponent } from './products/catproduct/editproduct/editprod
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
