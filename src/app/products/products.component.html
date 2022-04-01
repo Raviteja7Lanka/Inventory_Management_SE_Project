@@ -1,1 +1,28 @@
-<p>products works!</p>
+<div class="product-container">
+  <mat-grid-list cols="4">
+    <mat-grid-tile (click)="category()">
+      <mat-card class="card">
+        <mat-card-title>Category 1</mat-card-title>
+        <mat-card-actions> </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile (click)="category()">
+      <mat-card class="card">
+        <mat-card-title>Category 2</mat-card-title>
+        <mat-card-actions> </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile (click)="category()">
+      <mat-card class="card">
+        <mat-card-title>Category 3</mat-card-title>
+        <mat-card-actions> </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="card" (click)="category()">
+        <mat-card-title>Category 4</mat-card-title>
+        <mat-card-actions> </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -42,6 +42,10 @@ import { OrdersComponent } from './orders/orders.component';
 
 import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
+import { CatproductComponent } from './products/catproduct/catproduct.component';
+import { AddproductComponent } from './products/catproduct/addproduct/addproduct.component';
+import { DeleteproductComponent } from './products/catproduct/deleteproduct/deleteproduct.component';
+import { EditproductComponent } from './products/catproduct/editproduct/editproduct.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +71,10 @@ import { AboutComponent } from './about/about.component';
     OrdersComponent,
     ReportsComponent,
     AboutComponent,
+    CatproductComponent,
+    AddproductComponent,
+    DeleteproductComponent,
+    EditproductComponent,
   ],
   imports: [
     BrowserModule,
