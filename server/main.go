@@ -15,6 +15,7 @@ import (
 func RootEndPoint(response http.ResponseWriter, request *http.Request) {
 	response.WriteHeader(200)
 	response.Write([]byte("Hello World"))
+	// response.Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 func InitRouter() {
@@ -27,11 +28,17 @@ func InitRouter() {
 	// router.HandleFunc("/customer/orders/{ordId}", deleteCustomerOrder).Methods("DELETE")
 	routes.RegisterCustomerRoutes(router)
 
-	router.HandleFunc("/supplier/all", getAllSuppliers).Methods("GET")
-	router.HandleFunc("/supplier/{supId}", getSupplierByID).Methods("GET")
-	router.HandleFunc("/supplier/add", addSupplier).Methods("POST")
-	router.HandleFunc("/supplier/{supId}", updateSupplier).Methods("PUT")
-	router.HandleFunc("/supplier/{supId}", deleteSupplier).Methods("DELETE")
+	router.HandleFunc("/customer/all", getAllCustomers).Methods("GET")
+	router.HandleFunc("/customer/{custId}", getCustomerByID).Methods("GET")
+	router.HandleFunc("/customer/add", addCustomer).Methods("POST")
+	router.HandleFunc("/customer/{custId}", updateCustomer).Methods("PUT")
+	router.HandleFunc("/customer/{custId}", deleteCustomer).Methods("DELETE")
+
+	// router.HandleFunc("/supplier/all", getAllSuppliers).Methods("GET")
+	// router.HandleFunc("/supplier/{supId}", getSupplierByID).Methods("GET")
+	// router.HandleFunc("/supplier/add", addSupplier).Methods("POST")
+	// router.HandleFunc("/supplier/{supId}", updateSupplier).Methods("PUT")
+	// router.HandleFunc("/supplier/{supId}", deleteSupplier).Methods("DELETE")
 	routes.RegisterSupplierRoutes(router)
 
 	// router.HandleFunc("/staff/all", getAllStaff).Methods("GET")
@@ -58,7 +65,8 @@ func InitRouter() {
 
 
 	http.Handle("/", router)
-	log.Fatal(http.ListenAndServe(":8085", nil))
+	// log.Fatal(http.ListenAndServe(":8085", nil))
+	log.Fatal(http.ListenAndServe(":8085", handlers.CORS(corsObj, headersOk, methodsOk, allowCreds, allowOptions)(router)))
 }
 
 func main() {
