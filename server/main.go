@@ -39,11 +39,12 @@ func InitRouter() {
 	router.HandleFunc("/staff/{staffId}", updateStaff).Methods("PUT")
 	router.HandleFunc("/staff/{staffId}", deleteStaff).Methods("DELETE")
 
-	router.HandleFunc("/product/all", getAllProduct).Methods("GET")
-	router.HandleFunc("/product/{prodId}", getProductByID).Methods("GET")
-	router.HandleFunc("/product/add", addProduct).Methods("POST")
-	router.HandleFunc("/product/{prodId}", updateProduct).Methods("PUT")
-	router.HandleFunc("/product/{prodId}", deleteProduct).Methods("DELETE")
+	// router.HandleFunc("/product/all", getAllProduct).Methods("GET")
+	// router.HandleFunc("/product/{prodId}", getProductByID).Methods("GET")
+	// router.HandleFunc("/product/add", addProduct).Methods("POST")
+	// router.HandleFunc("/product/{prodId}", updateProduct).Methods("PUT")
+	// router.HandleFunc("/product/{prodId}", deleteProduct).Methods("DELETE")
+	routes.RegisterProductRoutes(router)
 
 	//router.HandleFunc("/payment/all", getAllPayments).Methods("GET")
 	//router.HandleFunc("/payment/{payId}", getPaymentsByID).Methods("GET")
