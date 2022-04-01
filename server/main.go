@@ -32,6 +32,7 @@ func InitRouter() {
 	router.HandleFunc("/supplier/add", addSupplier).Methods("POST")
 	router.HandleFunc("/supplier/{supId}", updateSupplier).Methods("PUT")
 	router.HandleFunc("/supplier/{supId}", deleteSupplier).Methods("DELETE")
+	routes.RegisterSupplierRoutes(router)
 
 	// router.HandleFunc("/staff/all", getAllStaff).Methods("GET")
 	// router.HandleFunc("/staff/{staffId}", getStaffByID).Methods("GET")
