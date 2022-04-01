@@ -9,17 +9,25 @@
                 <form>
                         <form [formGroup]="signupForm" (ngSubmit)="signup()">
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Full Name</label>
-                            <input  formControlName="fullname" type="text" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword1" class="form-label">First Name</label>
+                            <input  formControlName="first_name" type="text" class="form-control" id="exampleInputPassword1">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">last Name</label>
+                            <input  formControlName="last_name" type="text" class="form-control" id="exampleInputPassword1">
                           </div>
                           <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
-                            <input formControlName="mobile" type="number" class="form-control" id="exampleInputPassword1">
+                            <input formControlName="phone" type="number" class="form-control" id="exampleInputPassword1">
                           </div>
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Email address</label>
                           <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Username</label>
+                          <input  formControlName="username" type="text" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>

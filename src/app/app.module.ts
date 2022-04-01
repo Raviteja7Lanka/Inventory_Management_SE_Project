@@ -35,7 +35,6 @@ import { DeleteSupplierComponent } from './supplier-table/delete-supplier/delete
 import { EditSupplierComponent } from './supplier-table/edit-supplier/edit-supplier.component';
 import { DeleteCustomerComponent } from './customer-table/delete-customer/delete-customer.component';
 import { EditCustomerComponent } from './customer-table/edit-customer/edit-customer.component';
-import { ModelsComponent } from './models/models.component';
 import { WarehouseComponent } from './services/warehouse/warehouse.component';
 import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
@@ -61,7 +60,6 @@ import { AboutComponent } from './about/about.component';
     EditSupplierComponent,
     DeleteCustomerComponent,
     EditCustomerComponent,
-    ModelsComponent,
     WarehouseComponent,
     WarehouseUpdateComponent,
     WarehouseCreateComponent,

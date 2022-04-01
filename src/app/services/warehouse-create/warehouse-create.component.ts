@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warehouse-create.component.css']
 })
 export class WarehouseCreateComponent implements OnInit {
+  
 
   constructor() { }
 
