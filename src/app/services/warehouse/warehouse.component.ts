@@ -13,15 +13,17 @@ export class WarehouseComponent implements OnInit {
   pageSizeValue = [3, 5, 7, 10];
 
 
-  constructor(private route: ActivatedRoute,private router: Router,private http: HttpClient ) { }
+  constructor(private route: ActivatedRoute,private router: Router,private http: HttpClient ) {
+
+   }
   
   
 
   ngOnInit(): void {
-
+   
   }
   
- 
+  
 
 }
 export interface ResponseBody {
