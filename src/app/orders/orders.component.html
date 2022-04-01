@@ -11,6 +11,27 @@
     </button>
   </div>
   <div class="orders-content">
-    <div></div>
+    <mat-tab-group
+      class="Tabs"
+      mat-align-tabs="center"
+      animationDuration="1000ms"
+      backgroundColor="primary"
+    >
+      <mat-tab class="tab" label="Orders In Progress">
+        <div class="tabcontent">
+          <app-progressorders></app-progressorders>
+        </div>
+      </mat-tab>
+      <mat-tab class="tab" label="Pending Orders">
+        <div class="tabcontent">
+          <app-pendingorders></app-pendingorders>
+        </div>
+      </mat-tab>
+      <mat-tab class="tab" label="Outstanding Orders">
+        <div class="tabcontent">
+          <app-outstandingorders></app-outstandingorders>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </div>

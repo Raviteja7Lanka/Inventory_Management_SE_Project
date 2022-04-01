@@ -8,6 +8,8 @@ import (
 	"apis/routes"
 
 	"github.com/gorilla/mux"
+
+	"github.com/gorilla/handlers"
 )
 
 // import "gorm.io/gorm"
@@ -63,7 +65,11 @@ func InitRouter() {
 
 	routes.RegisterPaymentRoutes(router)
 
-
+    corsObj := handlers.AllowedOrigins([]string{"http://localhost:4200"})
+	headersOk := handlers.AllowedHeaders([]string{"accept", "origin", "X-Requested-With", "Content-Type", "Authorization"})
+	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"})
+	allowCreds := handlers.AllowCredentials()
+	allowOptions := handlers.OptionStatusCode(204)
 	http.Handle("/", router)
 	// log.Fatal(http.ListenAndServe(":8085", nil))
 	log.Fatal(http.ListenAndServe(":8085", handlers.CORS(corsObj, headersOk, methodsOk, allowCreds, allowOptions)(router)))

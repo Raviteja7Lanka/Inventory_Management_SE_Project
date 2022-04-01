@@ -18,6 +18,18 @@
 
 .orders-content {
   margin-top: 1.5rem;
+}
+
+.ordertypes {
   display: flex;
   gap: 1rem;
+}
+
+.Tabs {
+  max-width: 100%;
+}
+
+.tabcontent {
+  margin-top: 1rem;
+  margin-left: 1rem;
 }

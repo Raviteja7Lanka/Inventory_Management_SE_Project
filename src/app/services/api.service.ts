@@ -11,8 +11,13 @@ export class ApiService {
     return this.http.post<any>('SupplierAPI', data);
   }
   getSupplier() {
-    return this.http.get<any>('SupplierAPI');
+    return this.http.get<any>('');
   }
+
+  getAllSuppliers() {
+    return this.http.get<any>('http://localhost:8085/supplier/all');
+  }
+
   postCustomer(data: any) {
     return this.http.post<any>('CustomerAPI', data);
   }

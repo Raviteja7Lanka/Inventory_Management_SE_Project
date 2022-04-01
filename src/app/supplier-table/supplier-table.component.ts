@@ -12,8 +12,19 @@ import { EditSupplierComponent } from './edit-supplier/edit-supplier.component';
 })
 export class SupplierTableComponent implements OnInit {
   constructor(private dialog: MatDialog, private api: ApiService) {}
+  datasource: any = [];
+  ngOnInit(): void {
+    this.datasource = this.api.getAllSuppliers().subscribe({
+      next: (res) => {
+        console.log(this.datasource);
+      },
+      error: () => {
+        alert('There was an error loading Suppliers Information');
 
-  ngOnInit(): void {}
+        console.log(this.datasource);
+      },
+    });
+  }
   displayedColumns = [
     'supplierId',
     'name',
@@ -41,12 +52,7 @@ export class SupplierTableComponent implements OnInit {
     });
   }
 
-  /* 
-   <--------------- After Getting the API, Comment out the below code ----------------> 
-   datasource=this.api.get
-  
-  */
-  datasource = supplierData;
+  // datasource = supplierData;
 }
 
 export interface suppliers {
@@ -95,5 +101,5 @@ const supplierData: suppliers[] = [
     email: 'aditya@gmail.com',
     fax: 9999,
     otherDetails: 'nothing',
-  }
+  },
 ];
