@@ -53,7 +53,9 @@ func InitRouter() {
 	//router.HandleFunc("/payment/add", addPayments).Methods("POST")
 	//router.HandleFunc("/payment/{payId}", updatePayments).Methods("PUT")
 	//router.HandleFunc("/payment/{payId}", deletePayments).Methods("DELETE")
+
 	routes.RegisterPaymentRoutes(router)
+
 
 	http.Handle("/", router)
 	log.Fatal(http.ListenAndServe(":8085", nil))
