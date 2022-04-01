@@ -7,6 +7,10 @@
   width: 80%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
   height: 40%;
   page-break-inside: inherit;
+  cursor: pointer;
+  background-color: #5262bc;
+  color: #ffffff;
+  border: 4px inset #ffffff;
 }
 .mat-card-title {
   padding-top: 50px;

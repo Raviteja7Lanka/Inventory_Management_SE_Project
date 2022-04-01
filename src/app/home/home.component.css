@@ -12,6 +12,7 @@
   width: 80%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
   height: 60%;
   page-break-inside: inherit;
+  cursor: pointer;
 }
 .mat-card:hover {
   box-shadow: 5px 10px 15px 1px rgba(0, 0, 0, 0.258) !important;

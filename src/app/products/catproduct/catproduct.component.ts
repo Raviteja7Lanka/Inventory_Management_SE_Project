@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsComponent } from '../products.component';
 
 @Component({
   selector: 'app-catproduct',
   templateUrl: './catproduct.component.html',
-  styleUrls: ['./catproduct.component.css']
+  styleUrls: ['./catproduct.component.css'],
 })
 export class CatproductComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
+  add_product() {}
+  delete_product() {}
+  edit_product() {}
 
+  datasource = products;
+
+  displayedColumns = [];
 }
+const products: any = [];
