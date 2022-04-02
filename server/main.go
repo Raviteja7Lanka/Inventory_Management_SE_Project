@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	// "apis/routes"
+	"github.com/gorilla/handlers"
 
 	"github.com/gorilla/mux"
 
@@ -62,6 +62,14 @@ func InitRouter() {
 	router.HandleFunc("/payment/{payId}", updatePayments).Methods("PUT")
 	router.HandleFunc("/payment/{payId}", deletePayments).Methods("DELETE")
 
+
+	router.HandleFunc("/warehouse/all", getAllWarehouses).Methods("GET")
+	router.HandleFunc("/warehouse/{wareId}", getWarehouseByID).Methods("GET")
+	router.HandleFunc("/warehouse/add", addWarehouse).Methods("POST")
+	router.HandleFunc("/warehouse/{wareId}", updateWarehouse).Methods("PUT")
+	router.HandleFunc("/warehouse/{wareId}", deleteWarehouse).Methods("DELETE")
+
+	// routes.RegisterPaymentRoutes(router)
 	// routes.RegisterPaymentRoutes(router)
 
 	corsObj := handlers.AllowedOrigins([]string{"http://localhost:4200"})
