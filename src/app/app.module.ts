@@ -46,6 +46,12 @@ import { CatproductComponent } from './products/catproduct/catproduct.component'
 import { AddproductComponent } from './products/catproduct/addproduct/addproduct.component';
 import { DeleteproductComponent } from './products/catproduct/deleteproduct/deleteproduct.component';
 import { EditproductComponent } from './products/catproduct/editproduct/editproduct.component';
+import { PendingordersComponent } from './orders/pendingorders/pendingorders.component';
+import { ProgressordersComponent } from './orders/progressorders/progressorders.component';
+import { OutstandingordersComponent } from './orders/outstandingorders/outstandingorders.component';
+import { AddorderComponent } from './orders/addorder/addorder.component';
+import { EditorderComponent } from './orders/editorder/editorder.component';
+import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +81,12 @@ import { EditproductComponent } from './products/catproduct/editproduct/editprod
     AddproductComponent,
     DeleteproductComponent,
     EditproductComponent,
+    PendingordersComponent,
+    ProgressordersComponent,
+    OutstandingordersComponent,
+    AddorderComponent,
+    EditorderComponent,
+    DeleteorderComponent,
   ],
   imports: [
     BrowserModule,
