@@ -10,11 +10,11 @@ import (
 
 type Warehouses struct {
 	// gorm.Model
-	warehouse_id uint   `json:"warehouse_id"`
-	name         string `json:"name"`
-	location     string `json:"location"`
-	description  string `json:"descriptiom"`
-	status       string `json:"status"`
+	WAREHOUSE_ID string `json:"warehouse_id"`
+	NAME         string `json:"name"`
+	LOCATION     string `json:"location"`
+	DES          string `json:"des"`
+	STATUS       string `json:"status"`
 }
 
 func getAllWarehouses(w http.ResponseWriter, r *http.Request) {
@@ -44,28 +44,28 @@ func getWarehouseByID(w http.ResponseWriter, r *http.Request) {
 
 func addWarehouse(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	var supplier Warehouses
-	json.NewDecoder(r.Body).Decode(&supplier)
-	db.Create(&supplier)
-	json.NewEncoder(w).Encode(supplier)
+	var warehouse Warehouses
+	json.NewDecoder(r.Body).Decode(&warehouse)
+	db.Create(&warehouse)
+	json.NewEncoder(w).Encode(warehouse)
 }
 
 func updateWarehouse(w http.ResponseWriter, r *http.Request) {
-	var supplier Warehouses
+	var warehouse Warehouses
 	var updatedSupplier Warehouses
 	queryParams := mux.Vars(r)
 	cusId := queryParams["wareId"]
-	db.First(&supplier, cusId)
+	db.First(&warehouse, cusId)
 	json.NewDecoder(r.Body).Decode(&updatedSupplier)
-	db.Model(&supplier).Where("customer_id=?", cusId).Updates(&updatedSupplier)
-	json.NewEncoder(w).Encode(&supplier)
+	db.Model(&warehouse).Where("warehouse_id=?", cusId).Updates(&updatedSupplier)
+	json.NewEncoder(w).Encode(&warehouse)
 
 }
 
 func deleteWarehouse(w http.ResponseWriter, r *http.Request) {
-	var supplier Warehouses
+	var warehouse Warehouses
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["wareId"])
-	db.Delete(&supplier, queryParams["wareId"])
+	db.Delete(&warehouse, queryParams["wareId"])
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }
