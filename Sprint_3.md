@@ -8,8 +8,9 @@ BackEnd Team: Surya Mandapti, Sai Kiran Madipadige
 -
 
 ### Result of the Cypress Test
-![image]([cypresstest_sprint3](https://user-images.githubusercontent.com/94930984/161364412-af56b3f8-64b7-4d9a-8067-cafa872f7fde.jpeg)
-)
+
+![cypresstest_sprint3](https://user-images.githubusercontent.com/94930984/161364471-a47856a2-237e-442d-8617-857bed01ca8d.jpeg)
+
 
 ## Result of the Unit Test Cases
 
