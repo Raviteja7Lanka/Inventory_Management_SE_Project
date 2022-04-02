@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddSupplierComponent } from './add-supplier/add-supplier.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../services/api.service';
+import { HttpClient } from '@angular/common/http';
 import { DeleteSupplierComponent } from './delete-supplier/delete-supplier.component';
 import { EditSupplierComponent } from './edit-supplier/edit-supplier.component';
 
@@ -11,9 +12,29 @@ import { EditSupplierComponent } from './edit-supplier/edit-supplier.component';
   styleUrls: ['./supplier-table.component.css'],
 })
 export class SupplierTableComponent implements OnInit {
-  constructor(private dialog: MatDialog, private api: ApiService) {}
+  constructor(
+    private dialog: MatDialog,
+    private api: ApiService,
+    private http: HttpClient
+  ) {}
+  datasource: any;
+  ngOnInit(): void {
+    this.api.getAllSuppliers().subscribe((res) => {
+      console.log(res);
+      this.datasource = res;
 
-  ngOnInit(): void {}
+      // this.api.getAllSuppliers().subscribe({
+      //   next: (res) => {
+      //     console.log(this.datasource);
+      //   },
+      //   error: () => {
+      //     alert('There was an error loading Suppliers Information');
+
+      //     console.log(this.datasource);
+      //   },
+      // });
+    });
+  }
   displayedColumns = [
     'supplierId',
     'name',
@@ -46,7 +67,7 @@ export class SupplierTableComponent implements OnInit {
    datasource=this.api.get
   
   */
-  datasource = supplierData;
+  // datasource = supplierData;
 }
 
 export interface suppliers {
@@ -95,5 +116,5 @@ const supplierData: suppliers[] = [
     email: 'aditya@gmail.com',
     fax: 9999,
     otherDetails: 'nothing',
-  }
+  },
 ];

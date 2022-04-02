@@ -30,3 +30,50 @@ describe("Test for Customer Table Component", function () {
     cy.get("#cancelDeleteCustomerForm").click();
   });
 });
+
+describe("Test for Cards in the Home Page", function () {
+  it("Checks whether the products card is leading to the products page or not", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#Products").click();
+    cy.contains("Category 1");
+  });
+
+  it("Checks whether the Services Card is Leading to the Warehouse Page or not ", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#Services").click();
+    cy.contains("Warehouse");
+  });
+
+  it("Checks whether the Reports Card is Leading to the Warehouse Page or not ", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#Reports").click();
+    cy.contains("layout");
+  });
+
+  it("Checks whether the Orders Card is Leading to the Orders Page or not ", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#Orders").click();
+    cy.contains("Order Id");
+  });
+
+  it("Checks whether the menu button in the home page is opening the side toggle or not", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#Menu_Button").click();
+    cy.contains("About");
+  });
+});
+
+describe("Test For Orders Page", function () {
+  it("Checks whether the Add Order Button is present and bringing the dialog", function () {
+    cy.visit("http://localhost:4200/orders");
+    cy.get("#add-order");
+  });
+  it("Checks whether the Delete Order Button is present and bringing the dialog", function () {
+    cy.visit("http://localhost:4200/orders");
+    cy.get("#delete-order");
+  });
+  it("Checks whether the Edit Order Button is present and bringing the dialog", function () {
+    cy.visit("http://localhost:4200/orders");
+    cy.get("#edit-order");
+  });
+});

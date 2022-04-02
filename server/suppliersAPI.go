@@ -10,11 +10,12 @@ import (
 
 type Suppliers struct {
 	// gorm.Model
-	SUPPLIER_ID uint   `json:"supplier_id"`
-	NAME        string `json:"name"`
-	ADDRESS     string `json:"address"`
-	PHONE       uint   `json:"phone"`
-	EMAIL       string `json:"email"`
+	SUPPLIER_ID   string   `json:"supplier_id"`
+	NAME          string `json:"name"`
+	ADDRESS       string `json:"address"`
+	PHONE         string `json:"phone"`
+	EMAIL         string `json:"email"`
+	OTHER_DETAILS string `json:"other_details"`
 }
 
 func getAllSuppliers(w http.ResponseWriter, r *http.Request) {
@@ -22,11 +23,11 @@ func getAllSuppliers(w http.ResponseWriter, r *http.Request) {
 	var suppliers []Suppliers
 	e := db.Find(&suppliers).Error
 	if e != nil {
-		sendErr(w, http.StatusInternalServerError, err.Error())
+		sendErr(w, http.StatusInternalServerError, e.Error())
 		return
 	}
-	e = json.NewEncoder(w).Encode(suppliers)
-	if e != nil {
+	err := json.NewEncoder(w).Encode(suppliers)
+	if err != nil {
 		sendErr(w, http.StatusInternalServerError, err.Error())
 	}
 }
