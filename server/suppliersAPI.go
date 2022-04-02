@@ -10,7 +10,7 @@ import (
 
 type Suppliers struct {
 	// gorm.Model
-	SUPPLIER_ID   uint   `json:"supplier_id"`
+	SUPPLIER_ID   string   `json:"supplier_id"`
 	NAME          string `json:"name"`
 	ADDRESS       string `json:"address"`
 	PHONE         string `json:"phone"`
