@@ -18,7 +18,8 @@ BackEnd Team: Surya Mandapti, Sai Kiran Madipadige
 ![cypresstest_sprint3](https://user-images.githubusercontent.com/94930984/161364471-a47856a2-237e-442d-8617-857bed01ca8d.jpeg)
 
 ## How to run Cypress testing
--
+- ./node_modules/.bin/cypress open
+- Click on Test1.js after opening cypress window
 ## Result of the Unit Test Cases
 <img width="1439" alt="KarmaScreenshot" src="https://user-images.githubusercontent.com/94930984/161365933-b1b74263-e2fa-4d1f-90b1-b26280e48666.png">
 
