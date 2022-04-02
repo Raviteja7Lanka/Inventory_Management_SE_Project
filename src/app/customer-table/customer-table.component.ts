@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { ApiService } from '../services/api.service';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
@@ -10,9 +11,14 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
   styleUrls: ['./customer-table.component.css'],
 })
 export class CustomerTableComponent implements OnInit {
-  constructor(private dialog: MatDialog) {}
-
-  ngOnInit(): void {}
+  constructor(private dialog: MatDialog,private api: ApiService) {}
+  datasource: any;
+  ngOnInit(): void {
+    this.api.getAllCustomers().subscribe(res => {
+      console.log(res);
+      this.datasource=res
+  });
+}
   displayedColumns = [
     'customerId',
     'name',
@@ -41,7 +47,7 @@ export class CustomerTableComponent implements OnInit {
     });
   }
 
-  datasource = customerData;
+
 }
 
 export interface customers {
