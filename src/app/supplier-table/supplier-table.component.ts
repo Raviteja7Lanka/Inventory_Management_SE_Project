@@ -108,5 +108,5 @@ const supplierData: suppliers[] = [
     email: 'aditya@gmail.com',
     fax: 9999,
     otherDetails: 'nothing',
-  }
+  },
 ];

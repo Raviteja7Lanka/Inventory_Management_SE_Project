@@ -10,15 +10,16 @@ export class ApiService {
   postSupplier(data: any) {
     return this.http.post<any>('http://localhost:8085/supplier/add', data);
   }
-  getAllSuppliers(){
-    return this.http.get<any>('http://localhost:8085/supplier/all')
+  getAllSuppliers() {
+    return this.http.get<any>('http://localhost:8085/supplier/all');
   }
-  getAllCustomers(){
-    return this.http.get<any>('http://localhost:8085/customer/all') 
+  getAllCustomers() {
+    return this.http.get<any>('http://localhost:8085/customer/all');
   }
   getSupplier() {
-    return this.http.get<any>('SupplierAPI');
+    return this.http.get<any>('');
   }
+
   postCustomer(data: any) {
     return this.http.post<any>('http://localhost:8085/customer/add', data);
   }

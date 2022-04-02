@@ -1,19 +1,19 @@
 <mat-grid-list cols="4">
-  <mat-grid-tile routerLink="/products">
+  <mat-grid-tile routerLink="/products" id="Products">
     <mat-card class="card">
       <img mat-card-image src="../assets/IMG1.jpeg" />
       <mat-card-title>Products</mat-card-title>
       <mat-card-actions> </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
-  <mat-grid-tile routerLink="/warehouse">
+  <mat-grid-tile routerLink="/warehouse" id="Services">
     <mat-card class="card">
       <img mat-card-image src="../assets/service.jpeg" />
       <mat-card-title>Services</mat-card-title>
       <mat-card-actions> </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
-  <mat-grid-tile routerLink="/reports">
+  <mat-grid-tile routerLink="/reports" id="Reports">
     <mat-card class="card">
       <img mat-card-image src="../assets/Reports.jpeg" />
       <mat-card-title>Reports</mat-card-title>
@@ -21,7 +21,7 @@
     </mat-card>
   </mat-grid-tile>
   <a routerLink="/orders">
-    <mat-grid-tile>
+    <mat-grid-tile id="Orders">
       <mat-card class="card">
         <img mat-card-image src="../assets/orders.png" />
         <mat-card-title>Orders</mat-card-title>
