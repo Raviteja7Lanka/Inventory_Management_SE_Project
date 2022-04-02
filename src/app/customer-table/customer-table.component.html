@@ -26,17 +26,23 @@
     <ng-container matColumnDef="customerId">
       <th class="tbheader" mat-header-cell *matHeaderCellDef>Customer Id</th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        {{ element.customerId }}
+        {{ element.customer_id }}
       </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th class="tbheader" mat-header-cell *matHeaderCellDef>Name</th>
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>First Name</th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        {{ element.name }}
+        {{ element.first_name }}
       </td>
     </ng-container>
+    <!-- <ng-container matColumnDef="name">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td class="tbdata" mat-cell *matCellDef="let element">
+        {{ element.last_name }}
+      </td>
+    </ng-container> -->
 
     <!-- Address Column -->
     <ng-container matColumnDef="address">

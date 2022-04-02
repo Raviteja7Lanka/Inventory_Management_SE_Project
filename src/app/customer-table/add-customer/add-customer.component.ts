@@ -17,16 +17,18 @@ export class AddCustomerComponent implements OnInit {
   addCustomerForm!: FormGroup;
   ngOnInit(): void {
     this.addCustomerForm = this.formbuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      customer_id: parseInt((Math.random()*1000).toString()).toString(),
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
       address: ['', Validators.required],
-      phoneNum: ['', Validators.required],
-      emailId: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      staff_id:'100',
     });
   }
   customerAdd() {
     if (this.addCustomerForm.valid) {
-      this.api.postSupplier(this.addCustomerForm.value).subscribe({
+      this.api.postCustomer(this.addCustomerForm.value).subscribe({
         next: (res) => {
           alert('Customer Added Successfully');
           this.addCustomerForm.reset();
