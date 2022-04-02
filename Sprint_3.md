@@ -62,7 +62,7 @@ BackEnd Team: Surya Mandapti, Sai Kiran Madipadige
 
 
 ## UI Demo
-[Link to video](https://youtu.be/yVaqCzsJV7w)
+[Link to video](https://youtu.be/mEgczoQ0uXk)
 
 ## Backend Demo
 [Link to video](https://youtu.be/CR6iwblbIS4)
