@@ -69,8 +69,11 @@ func InitRouter() {
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"})
 	allowCreds := handlers.AllowCredentials()
 	allowOptions := handlers.OptionStatusCode(204)
+<<<<<<< Updated upstream
 
 	// router.HandleFunc("/staff/all", getAllCustomerOrders).Methods("GET")
+=======
+>>>>>>> Stashed changes
 
 
 	http.Handle("/", router)

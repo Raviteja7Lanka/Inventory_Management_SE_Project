@@ -23,7 +23,6 @@ export class AddCustomerComponent implements OnInit {
       address: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required],
-      staff_id:'100',
     });
   }
   customerAdd() {
