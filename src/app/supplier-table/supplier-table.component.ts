@@ -15,9 +15,10 @@ export class SupplierTableComponent implements OnInit {
   constructor(private dialog: MatDialog, private api: ApiService) {}
   datasource: any = [];
   ngOnInit(): void {
-    this.datasource = this.api.getAllSuppliers().subscribe({
+    this.api.getAllSuppliers().subscribe({
       next: (res) => {
         console.log(this.datasource);
+        this.datasource= res
       },
       error: () => {
         alert('There was an error loading Suppliers Information');
@@ -60,7 +61,6 @@ export class SupplierTableComponent implements OnInit {
   */
   // datasource = supplierData;
 }
-
 export interface suppliers {
   supplierId: number;
   name: string;
@@ -70,6 +70,7 @@ export interface suppliers {
   fax: number;
   otherDetails: string;
 }
+
 
 const supplierData: suppliers[] = [
   {
