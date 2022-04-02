@@ -5,17 +5,27 @@ FrontEnd Team: Ravi Teja Lanka, Nithin Meela
 BackEnd Team: Surya Mandapti, Sai Kiran Madipadige
 
 ## Frontend
--
+- Developed the Reports Page as the dashboard.
+- Developed services page with fully integration from the backend.
+- Developed Orders page with cred funtionality.
+- Developed The Products Page with including the Catagories.
+- Fixed the CRED operations across the UI.
+- Performed the Cypress testing for all the new components.
+- Performed the Unit Testing For all the new components.
 
 ### Result of the Cypress Test
 
 ![cypresstest_sprint3](https://user-images.githubusercontent.com/94930984/161364471-a47856a2-237e-442d-8617-857bed01ca8d.jpeg)
 
-
+## How to run Cypress testing
+-
 ## Result of the Unit Test Cases
 
 
 
+## How to run Karma Unit Testing
+
+- ng test
 
 ## Backend 
 - Created Warehouses table and developed its API to accomodate the changes. 
