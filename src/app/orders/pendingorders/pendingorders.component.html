@@ -1,1 +1,45 @@
-<p>pendingorders works!</p>
+<div class="orders-container">
+  <table class="table" mat-table [dataSource]="datasource">
+    <!-- Supplier Id Column -->
+    <ng-container matColumnDef="order_id">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Order Id</th>
+      <td class="tbdata" mat-cell *matCellDef="let element">
+        {{ element.order_id }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="date_of_order">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Date</th>
+      <td class="tbdata" mat-cell *matCellDef="let element">
+        {{ element.date_of_order }}
+      </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="customer_id">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Customer ID</th>
+      <td class="tbdata" mat-cell *matCellDef="let element">
+        {{ element.customer_id }}
+      </td>
+    </ng-container>
+
+    <!-- Phone Number Column -->
+    <ng-container matColumnDef="supplier_id">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Suppplier ID</th>
+      <td class="tbdata" mat-cell *matCellDef="let element">
+        {{ element.supplier_id }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="order_Details">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Details</th>
+      <td class="tbdata" mat-cell *matCellDef="let element">
+        <a href="#">View Details</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

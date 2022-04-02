@@ -1,12 +1,30 @@
 <div class="orders-container">
   <div class="orders-nav">
-    <button id="add-order" mat-raised-button type="button" color="primary">
+    <button
+      id="add-order"
+      mat-raised-button
+      type="button"
+      color="primary"
+      (click)="add_order()"
+    >
       Add Order
     </button>
-    <button id="edit-order" mat-raised-button type="button" color="primary">
+    <button
+      id="edit-order"
+      mat-raised-button
+      type="button"
+      color="primary"
+      (click)="edit_order()"
+    >
       Edit Order
     </button>
-    <button id="delete-order" mat-raised-button type="button" color="primary">
+    <button
+      id="delete-order"
+      mat-raised-button
+      type="button"
+      color="primary"
+      (click)="delete_order()"
+    >
       Delete Order
     </button>
   </div>

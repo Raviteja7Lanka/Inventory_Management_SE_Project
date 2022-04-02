@@ -49,6 +49,9 @@ import { EditproductComponent } from './products/catproduct/editproduct/editprod
 import { PendingordersComponent } from './orders/pendingorders/pendingorders.component';
 import { ProgressordersComponent } from './orders/progressorders/progressorders.component';
 import { OutstandingordersComponent } from './orders/outstandingorders/outstandingorders.component';
+import { AddorderComponent } from './orders/addorder/addorder.component';
+import { EditorderComponent } from './orders/editorder/editorder.component';
+import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,9 @@ import { OutstandingordersComponent } from './orders/outstandingorders/outstandi
     PendingordersComponent,
     ProgressordersComponent,
     OutstandingordersComponent,
+    AddorderComponent,
+    EditorderComponent,
+    DeleteorderComponent,
   ],
   imports: [
     BrowserModule,
