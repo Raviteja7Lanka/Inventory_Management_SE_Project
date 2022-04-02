@@ -78,8 +78,6 @@ func InitRouter() {
 	allowCreds := handlers.AllowCredentials()
 	allowOptions := handlers.OptionStatusCode(204)
 
-	// router.HandleFunc("/staff/all", getAllCustomerOrders).Methods("GET")
-
 
 	http.Handle("/", router)
 	log.Fatal(http.ListenAndServe(":8085", handlers.CORS(corsObj, headersOk, methodsOk, allowCreds, allowOptions)(router)))
@@ -89,5 +87,4 @@ func InitRouter() {
 func main() {
 	InitDB()
 	InitRouter()
-
 }
