@@ -17,8 +17,8 @@ export class SupplierTableComponent implements OnInit {
   ngOnInit(): void {
     this.api.getAllSuppliers().subscribe({
       next: (res) => {
+        this.datasource = res;
         console.log(this.datasource);
-        this.datasource= res
       },
       error: () => {
         alert('There was an error loading Suppliers Information');
@@ -71,42 +71,41 @@ export interface suppliers {
   otherDetails: string;
 }
 
-
-const supplierData: suppliers[] = [
-  {
-    supplierId: 1,
-    name: 'Ravi',
-    address: '4000 SW 37TH BLVD',
-    phone: 12345568,
-    email: 'ravi@gmail.com',
-    fax: 123456,
-    otherDetails: 'nothing',
-  },
-  {
-    supplierId: 1,
-    name: 'Aditya',
-    address: '3999 SW 40TH BLVD',
-    phone: 19999454,
-    email: 'aditya@gmail.com',
-    fax: 9999,
-    otherDetails: 'nothing',
-  },
-  {
-    supplierId: 1,
-    name: 'Aditya',
-    address: '3999 SW 40TH BLVD',
-    phone: 19999454,
-    email: 'aditya@gmail.com',
-    fax: 9999,
-    otherDetails: 'nothing',
-  },
-  {
-    supplierId: 1,
-    name: 'Aditya',
-    address: '3999 SW 40TH BLVD',
-    phone: 19999454,
-    email: 'aditya@gmail.com',
-    fax: 9999,
-    otherDetails: 'nothing',
-  },
-];
+// const supplierData: suppliers[] = [
+//   {
+//     supplierId: 1,
+//     name: 'Ravi',
+//     address: '4000 SW 37TH BLVD',
+//     phone: 12345568,
+//     email: 'ravi@gmail.com',
+//     fax: 123456,
+//     otherDetails: 'nothing',
+//   },
+//   {
+//     supplierId: 1,
+//     name: 'Aditya',
+//     address: '3999 SW 40TH BLVD',
+//     phone: 19999454,
+//     email: 'aditya@gmail.com',
+//     fax: 9999,
+//     otherDetails: 'nothing',
+//   },
+//   {
+//     supplierId: 1,
+//     name: 'Aditya',
+//     address: '3999 SW 40TH BLVD',
+//     phone: 19999454,
+//     email: 'aditya@gmail.com',
+//     fax: 9999,
+//     otherDetails: 'nothing',
+//   },
+//   {
+//     supplierId: 1,
+//     name: 'Aditya',
+//     address: '3999 SW 40TH BLVD',
+//     phone: 19999454,
+//     email: 'aditya@gmail.com',
+//     fax: 9999,
+//     otherDetails: 'nothing',
+//   },
+// ];
