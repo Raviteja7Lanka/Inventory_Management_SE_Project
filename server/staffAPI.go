@@ -8,9 +8,9 @@ import (
 	"github.com/gorilla/mux"
 )
 
-type Staff struct {
+type Staffs struct {
 	// gorm.Model
-	STAFFS_ID  uint   `json:"staffs_id"`
+	STAFF_ID  string   `json:"staff_id"`
 	FIRST_NAME string `json:"first_name"`
 	LAST_NAME  string `json:"last_name"`
 	ADDRESS    string `json:"address"`
@@ -18,11 +18,12 @@ type Staff struct {
 	EMAIL      string `json:"email"`
 	USERNAME   string `json:"username"`
 	PASSWORD   string `json:"password"`
+	ROLE_ID string `json:"role_id"`
 }
 
 func getAllStaff(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	var staff []Staff
+	var staff []Staffs
 	e := db.Find(&staff).Error
 	if e != nil {
 		sendErr(w, http.StatusInternalServerError, err.Error())
@@ -35,9 +36,9 @@ func getAllStaff(w http.ResponseWriter, r *http.Request) {
 }
 
 func getStaffByID(w http.ResponseWriter, r *http.Request) {
-	var staff Staff
+	var staff Staffs
 	queryParams := mux.Vars(r)
-	db.Raw("select STAFFS_ID, FIRST_NAME, LAST_NAME, ADDRESS, PHONE, EMAIL, USERNAME, PASSWORD, ROLE_ID From STAFFS where USERNAME=?", queryParams["staffId"]).Scan(&staff)
+	db.Raw("select STAFF_ID, FIRST_NAME, LAST_NAME, ADDRESS, PHONE, EMAIL, USERNAME, PASSWORD, ROLE_ID From STAFFS where USERNAME=?", queryParams["staffId"]).Scan(&staff)
 	fmt.Println(queryParams["staffId"])
 	e := json.NewEncoder(w).Encode(staff)
 	if e != nil {
@@ -47,26 +48,29 @@ func getStaffByID(w http.ResponseWriter, r *http.Request) {
 
 func addStaff(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	var staff Staff
+	var staff Staffs
 	json.NewDecoder(r.Body).Decode(&staff)
-	db.Create(&staff)
+	e:=db.Create(&staff).Error
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}	
 	json.NewEncoder(w).Encode(staff)
 }
 
 func updateStaff(w http.ResponseWriter, r *http.Request) {
-	var staff Staff
-	var updatedStaff Staff
+	var staff Staffs
+	var updatedStaffs Staffs
 	queryParams := mux.Vars(r)
-	cusId := queryParams["supId"]
+	cusId := queryParams["staffId"]
 	db.First(&staff, cusId)
-	json.NewDecoder(r.Body).Decode(&updatedStaff)
-	db.Model(&staff).Where("customer_id=?", cusId).Updates(&updatedStaff)
+	json.NewDecoder(r.Body).Decode(&updatedStaffs)
+	db.Model(&staff).Where("staff_id=?", cusId).Updates(&updatedStaffs)
 	json.NewEncoder(w).Encode(&staff)
 
 }
 
 func deleteStaff(w http.ResponseWriter, r *http.Request) {
-	var staff Staff
+	var staff Staffs
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["staffId"])
 	db.Delete(&staff, queryParams["staffId"])

@@ -53,9 +53,9 @@ export class LoginComponent implements OnInit {
 
               }
               else{
-                alert("user not found");
-        
-            }
+        alert("user not found");
+
+    }
 
     });
     // this.http.get<any>("http://localhost:8085/staff/"+user[0],httpOptions)
