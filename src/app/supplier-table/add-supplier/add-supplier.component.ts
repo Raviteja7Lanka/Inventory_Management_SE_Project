@@ -18,12 +18,12 @@ export class AddSupplierComponent implements OnInit {
 
   ngOnInit(): void {
     this.addSupplierForm = this.formbuilder.group({
-      supplier_id: parseInt((Math.random()*1000).toString()).toString(),
+      supplier_id: parseInt((Math.random() * 1000).toString()).toString(),
       name: ['', Validators.required],
       address: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required],
-      other_details: ['']
+      other_details: [''],
     });
   }
 

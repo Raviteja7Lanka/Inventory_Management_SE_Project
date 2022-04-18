@@ -26,4 +26,11 @@ export class ApiService {
   getCustomer() {
     return this.http.get<any>('CustomerAPI');
   }
+
+  updateSupplier(data: any) {
+    return this.http.put<any>(
+      'http://localhost:8085/supplier/' + data['supplier_id'],
+      data
+    );
+  }
 }
