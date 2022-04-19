@@ -7,8 +7,6 @@ import (
 	"github.com/gorilla/handlers"
 
 	"github.com/gorilla/mux"
-
-	"github.com/gorilla/handlers"
 )
 
 // import "gorm.io/gorm"
@@ -62,7 +60,6 @@ func InitRouter() {
 	router.HandleFunc("/payment/{payId}", updatePayments).Methods("PUT")
 	router.HandleFunc("/payment/{payId}", deletePayments).Methods("DELETE")
 
-
 	router.HandleFunc("/warehouse/all", getAllWarehouses).Methods("GET")
 	router.HandleFunc("/warehouse/{wareId}", getWarehouseByID).Methods("GET")
 	router.HandleFunc("/warehouse/add", addWarehouse).Methods("POST")
@@ -77,7 +74,6 @@ func InitRouter() {
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"})
 	allowCreds := handlers.AllowCredentials()
 	allowOptions := handlers.OptionStatusCode(204)
-
 
 	http.Handle("/", router)
 	log.Fatal(http.ListenAndServe(":8085", handlers.CORS(corsObj, headersOk, methodsOk, allowCreds, allowOptions)(router)))
