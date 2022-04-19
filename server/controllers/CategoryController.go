@@ -8,12 +8,12 @@ import (
 	"github.com/gorilla/mux"
 )
 
-//var db *gorm.DB
+// var db *gorm.DB
 
-func GetAllOrders(w http.ResponseWriter, r *http.Request) {
+func GetAllCategories(w http.ResponseWriter, r *http.Request) {
 	// w.Header().Set("Content-Type", "application/json")
-	Orders := models.GetAllOrders()
-	res, e := json.Marshal(Orders)
+	category := models.GetAllCategories()
+	res, e := json.Marshal(category)
 	if e != nil {
 		resp, _ := json.Marshal(map[string]string{"error": e.Error()})
 		http.Error(w, string(resp), http.StatusInternalServerError)
@@ -23,15 +23,15 @@ func GetAllOrders(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
-func GetOrderByID(w http.ResponseWriter, r *http.Request) {
-	// db.Raw("select id, date_of_order, order_details_id, Order_id, supplier_id, status from Orders where id=?",1).Scan(&order)
+func GetCategoriesByID(w http.ResponseWriter, r *http.Request) {
+	// db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
 	// data,_:= json.Marshal(&order)
 	// fmt.Fprint(w, string(data))
 	queryParams := mux.Vars(r)
-	// fmt.Println(queryParams["ordId"])
-	// db.First(&Orders, queryParams["ordId"])
-	Orders := models.GetOrderByID(queryParams["ordId"])
-	res, e := json.Marshal(Orders)
+	// fmt.Println(queryParams["cusId"])
+	// db.First(&customers, queryParams["cusId"])
+	category := models.GetCategoriesByID(queryParams["catId"])
+	res, e := json.Marshal(category)
 	if e != nil {
 		http.Error(w, string(e.Error()), http.StatusInternalServerError)
 	}
@@ -40,12 +40,12 @@ func GetOrderByID(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
-func AddOrder(w http.ResponseWriter, r *http.Request) {
+func AddCategories(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	Orders := &models.Orders{}
-	json.NewDecoder(r.Body).Decode(&Orders)
-	newCust := models.AddOrder(Orders)
-	res, e := json.Marshal(newCust)
+	category := &models.Category{}
+	json.NewDecoder(r.Body).Decode(&category)
+	newCat := models.AddCategories(category)
+	res, e := json.Marshal(newCat)
 	if e != nil {
 		http.Error(w, string(e.Error()), http.StatusInternalServerError)
 	}
@@ -55,14 +55,14 @@ func AddOrder(w http.ResponseWriter, r *http.Request) {
 	// fmt.Println("Hello")
 }
 
-func UpdateOrder(w http.ResponseWriter, r *http.Request) {
+func UpdateCategories(w http.ResponseWriter, r *http.Request) {
 
-	updatedOrder := &models.Orders{}
+	updatedCategory := &models.Category{}
 	queryParams := mux.Vars(r)
-	ordId := queryParams["ordId"]
-	json.NewDecoder(r.Body).Decode(&updatedOrder)
-	orders := models.UpdateOrder(ordId, updatedOrder)
-	res, e := json.Marshal(orders)
+	catId := queryParams["catId"]
+	json.NewDecoder(r.Body).Decode(&updatedCategory)
+	category := models.UpdateCategories(catId, updatedCategory)
+	res, e := json.Marshal(category)
 	if e != nil {
 		resp, _ := json.Marshal(map[string]string{"error": e.Error()})
 		http.Error(w, string(resp), http.StatusInternalServerError)
@@ -73,12 +73,12 @@ func UpdateOrder(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func DeleteOrder(w http.ResponseWriter, r *http.Request) {
+func DeleteCategories(w http.ResponseWriter, r *http.Request) {
 
 	queryParams := mux.Vars(r)
-	Orders := models.DeleteOrder(queryParams["cusId"])
+	category := models.DeleteCategories(queryParams["catId"])
 	//db.Raw("delete from Orders where order_id=?", queryParams["ordId"])
-	res, e := json.Marshal(Orders)
+	res, e := json.Marshal(category)
 	if e != nil {
 		resp, _ := json.Marshal(map[string]string{"error": e.Error()})
 		http.Error(w, string(resp), http.StatusInternalServerError)

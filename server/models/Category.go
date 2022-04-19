@@ -37,7 +37,7 @@ func GetAllCategories() []Category {
 	return category
 }
 
-func GetCategoryByID(catId string) Category {
+func GetCategoriesByID(catId string) Category {
 	var category Category
 	e := db.First(&category, catId)
 	if e != nil {
