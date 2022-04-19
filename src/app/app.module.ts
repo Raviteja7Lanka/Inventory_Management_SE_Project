@@ -46,6 +46,7 @@ import { CatproductComponent } from './products/catproduct/catproduct.component'
 import { AddproductComponent } from './products/catproduct/addproduct/addproduct.component';
 import { DeleteproductComponent } from './products/catproduct/deleteproduct/deleteproduct.component';
 import { EditproductComponent } from './products/catproduct/editproduct/editproduct.component';
+import { CategoriesComponent } from './services/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { EditproductComponent } from './products/catproduct/editproduct/editprod
     AddproductComponent,
     DeleteproductComponent,
     EditproductComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
