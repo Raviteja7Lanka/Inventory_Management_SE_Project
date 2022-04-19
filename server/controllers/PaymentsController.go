@@ -1,14 +1,13 @@
 package controllers
 
-// import (
-// 	"apis/models"
-// 	"encoding/json"
-// 	"net/http"
+import (
+	"apis/models"
+	"encoding/json"
+	"fmt"
+	"net/http"
 
-// 	"github.com/gorilla/mux"
-// )
-
-//var db *gorm.DB
+	"github.com/gorilla/mux"
+)
 
 // func GetAllPayments(w http.ResponseWriter, r *http.Request) {
 // 	// w.Header().Set("Content-Type", "application/json")
@@ -42,7 +41,7 @@ package controllers
 
 // func AddPayment(w http.ResponseWriter, r *http.Request) {
 // 	w.Header().Set("Content-Type", "application/json")
-// 	Payments := &models.Payments{}
+// 	Payments := & models.Payments
 // 	json.NewDecoder(r.Body).Decode(&Payments)
 // 	newCust := models.AddPayment(Payments)
 // 	res, e := json.Marshal(newCust)
@@ -57,7 +56,7 @@ package controllers
 
 // func UpdatePayment(w http.ResponseWriter, r *http.Request) {
 
-// 	updatedPayment := &models.Payments{}
+// 	updatedPayment := & models.Payments
 // 	queryParams := mux.Vars(r)
 // 	payId := queryParams["payId"]
 // 	json.NewDecoder(r.Body).Decode(&updatedPayment)
@@ -88,3 +87,56 @@ package controllers
 // 	w.Write(res)
 
 // }
+
+func GetAllPayments(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var payments []models.Payments
+	e := db.Find(&payments).Error
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+		return
+	}
+	e = json.NewEncoder(w).Encode(payments)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
+}
+
+func GetPaymentsByID(w http.ResponseWriter, r *http.Request) {
+	var payments models.Payments
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["payId"])
+	db.First(&payments, queryParams["payId"])
+	e := json.NewEncoder(w).Encode(payments)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
+}
+
+func AddPayments(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var payments models.Payments
+	json.NewDecoder(r.Body).Decode(&payments)
+	db.Create(&payments)
+	json.NewEncoder(w).Encode(payments)
+}
+
+func UpdatePayments(w http.ResponseWriter, r *http.Request) {
+	var payments models.Payments
+	var updatedPayments models.Payments
+	queryParams := mux.Vars(r)
+	payId := queryParams["payId"]
+	db.First(&payments, payId)
+	json.NewDecoder(r.Body).Decode(&updatedPayments)
+	db.Model(&payments).Where("customer_id=?", payId).Updates(&updatedPayments)
+	json.NewEncoder(w).Encode(&payments)
+
+}
+
+func DeletePayments(w http.ResponseWriter, r *http.Request) {
+	var payments models.Payments
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["payId"])
+	db.Delete(&payments, queryParams["payId"])
+	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
+}

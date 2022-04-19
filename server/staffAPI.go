@@ -37,7 +37,7 @@ func getAllStaff(w http.ResponseWriter, r *http.Request) {
 func getStaffByID(w http.ResponseWriter, r *http.Request) {
 	var staff Staff
 	queryParams := mux.Vars(r)
-	db.Raw("select STAFFS_ID, FIRST_NAME, LAST_NAME, ADDRESS, PHONE, EMAIL, USERNAME, PASSWORD, ROLE_ID From STAFFS where USERNAME=?", queryParams["staffId"]).Scan(&staff)
+	db.Raw("select STAFFS_ID, FIRST_NAME, LAST_NAME, ADDRESS, PHONE, EMAIL, USERNAME, PASSWORD, ROLE_ID From STAFFS where EMAIL=?", queryParams["staffId"]).Scan(&staff)
 	fmt.Println(queryParams["staffId"])
 	e := json.NewEncoder(w).Encode(staff)
 	if e != nil {

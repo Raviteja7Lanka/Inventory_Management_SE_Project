@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"apis/config"
 	"apis/models"
 	"encoding/json"
 	"fmt"
@@ -92,6 +93,7 @@ import (
 // 	w.Write(res)
 
 // }
+var db = config.GetDB()
 
 func sendErr(w http.ResponseWriter, code int, message string) {
 	resp, _ := json.Marshal(map[string]string{"error": message})

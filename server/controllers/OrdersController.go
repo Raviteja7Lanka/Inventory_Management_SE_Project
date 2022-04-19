@@ -7,10 +7,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"gorm.io/gorm"
 )
-
-var db *gorm.DB
 
 // func GetAllOrders(w http.ResponseWriter, r *http.Request) {
 // 	// w.Header().Set("Content-Type", "application/json")

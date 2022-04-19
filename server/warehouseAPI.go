@@ -13,7 +13,7 @@ type Warehouses struct {
 	WAREHOUSE_ID string `json:"warehouse_id"`
 	NAME         string `json:"name"`
 	LOCATION     string `json:"location"`
-	DES          string `json:"des"`
+	DESCRIPTION  string `json:"description"`
 	STATUS       string `json:"status"`
 }
 
@@ -22,12 +22,12 @@ func getAllWarehouses(w http.ResponseWriter, r *http.Request) {
 	var warehouses []Warehouses
 	e := db.Find(&warehouses).Error
 	if e != nil {
-		sendErr(w, http.StatusInternalServerError, err.Error())
+		// sendErr(w, http.StatusInternalServerError, e.Error())
 		return
 	}
 	e = json.NewEncoder(w).Encode(warehouses)
 	if e != nil {
-		sendErr(w, http.StatusInternalServerError, err.Error())
+		// sendErr(w, http.StatusInternalServerError, e.Error())
 	}
 }
 
