@@ -76,7 +76,7 @@ func UpdateRole(w http.ResponseWriter, r *http.Request) {
 func DeleteRole(w http.ResponseWriter, r *http.Request) {
 
 	queryParams := mux.Vars(r)
-	roles := models.DeleteProduct(queryParams["roleId"])
+	roles := models.DeleteRole(queryParams["roleId"])
 	//db.Raw("delete from Orders where order_id=?", queryParams["ordId"])
 	res, e := json.Marshal(roles)
 	if e != nil {

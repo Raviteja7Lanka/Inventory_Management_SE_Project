@@ -1,0 +1,41 @@
+<br><br><br>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Add new warehouse</h2>
+        <form [formGroup]="addWarehouseForm" (ngSubmit)="addWarehouse()">
+            <div class="form-group">
+              <label for="name"><h3>Warehouse Name</h3></label>
+              <input type="email" class="form-control" formControlName="name" id="name">
+            </div><br><br>
+            <div class="form-group" >
+              <label for="location"><h3>Warehouse Location</h3></label>
+              <select class="form-control" formControlName="location" id="location">
+                <option>Texas</option>
+                <option>California</option>
+                <option>Florida</option>
+                <option>New York</option>
+                <option>Virginia</option>
+              </select>
+            </div><br><br>
+            <div class="form-group">
+                <label for="capacity"><h3>Warehouse Capacity (in unit products)</h3></label>
+                <input type="email" class="form-control" formControlName="capacity" id="capacity">
+              </div><br><br>
+            <div class="form-group">
+              <label for="description">Warehouse Description</label>
+              <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
+            </div><br><br>
+            <button type="submit" class="btn btn-primary mb-2">Add Warehouse</button>
+          </form>
+      </div>
+      <div class="col-sm">
+        
+      </div>
+      <div class="col-sm">
+        
+      </div>
+    </div>
+  </div>
+

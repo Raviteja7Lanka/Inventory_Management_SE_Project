@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pendingorders',
@@ -6,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pendingorders.component.css'],
 })
 export class PendingordersComponent implements OnInit {
-  constructor() {}
+  constructor(private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.http.get<any>(`http://localhost:8085/orders/status/pending`).subscribe(res => {
+      this.datasource=res;
+      console.log(res)
+  });   
+  }
 
   datasource: any = [
     {

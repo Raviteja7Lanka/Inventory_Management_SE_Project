@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group(
       {
+        staffs_id: parseInt((Math.random()*10000).toString()),
         first_name:[''],
         last_name:[''],
         phone:[''],

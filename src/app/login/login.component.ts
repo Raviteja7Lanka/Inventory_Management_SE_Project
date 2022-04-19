@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         }
       )
     } ;
-    this.http.get<any>(`http://localhost:8085/staff/${user[0]}`).subscribe(res => {
+    this.http.get<any>(`http://localhost:8085/staff/${uname}`).subscribe(res => {
         console.log(res);
         // this.test = res.total;
         //console.log(res);
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         //         this.router.navigate(['/home']) 
         //       }
         //     })
-        if (res.username === user[0] && res.password === this.loginForm.value.password)
+        if (res.email === uname && res.password === this.loginForm.value.password)
               {
                 alert("Login Success");
                 this.loginForm.reset();

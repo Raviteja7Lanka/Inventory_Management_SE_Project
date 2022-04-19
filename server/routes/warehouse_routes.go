@@ -1,14 +1,16 @@
 package routes
 
 import (
+	"apis/controllers"
+
 	"github.com/gorilla/mux"
 )
 
 func RegisterWarehouseRoutes(router *mux.Router) {
 
-	router.HandleFunc("/warehouse/all", GetAllWarehouses).Methods("GET")
-	router.HandleFunc("/warehouse/{wareId}", GetWarehouseByID).Methods("GET")
-	router.HandleFunc("/warehouse/add", AddWarehouse).Methods("POST")
-	router.HandleFunc("/warehouse/{wareId}", UpdateWarehouse).Methods("PUT")
-	router.HandleFunc("/warehouse/{wareId}", DeleteWarehouse).Methods("DELETE")
+	router.HandleFunc("/warehouse/all", controllers.GetAllWarehouses).Methods("GET")
+	router.HandleFunc("/warehouse/{wareId}", controllers.GetWarehouseByID).Methods("GET")
+	router.HandleFunc("/warehouse/{wareId}", controllers.UpdateWarehouse).Methods("PUT")
+	router.HandleFunc("/warehouse/add", controllers.AddWarehouse).Methods("POST")
+	router.HandleFunc("/warehouse/{wareId}", controllers.DeleteWarehouse).Methods("DELETE")
 }
