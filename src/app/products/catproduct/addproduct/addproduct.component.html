@@ -1,1 +1,56 @@
-<p>addproduct works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Add new product</h2>
+        <form [formGroup]="addProductForm" (ngSubmit)="addProduct()" > 
+            <!-- -->
+            <div class="form-group">
+              <label for="product_name">Product Name</label>
+              <input type="text" class="form-control" formControlName="product_name" id="product_name">
+            </div><br>
+           
+            <div class="form-group">
+              <label for="product_descr_ip_tion">Product Description</label>
+              <textarea class="form-control" formControlName="product_descr_ip_tion" id="product_descr_ip_tion" rows="3"></textarea>
+            </div><br>
+            <div class="form-group">
+                <label for="product_price">Price</label>
+                <input type="text" class="form-control" formControlName="product_price" id="product_price" rows="3">
+              </div><br>
+               <div class="form-group" >
+                <label for="supplier_id"><h3>Select Supplier</h3></label>
+                <select class="form-control" formControlName="supplier_id" id="supplier_id" >
+                  <option *ngFor="let supplier of suppliers" value="{{supplier.supplier_id}}" >{{supplier.name}}</option>
+                </select>
+              </div><br><br>
+              <div class="form-group">
+                <label for="product_unit">Product Measurement Units</label>
+                <input type="text" class="form-control" formControlName="product_unit" id="product_unit" rows="3">
+              </div><br>
+              <div class="form-group">
+                <label for="product_quantity">Product Volume in cubic cm.</label>
+                <input type="text" class="form-control" formControlName="product_quantity" id="product_quantity" rows="3">
+              </div><br>
+              <div class="form-group">
+                <label for="other_details">Product Description</label>
+                <textarea class="form-control" formControlName="other_details" id="other_details" rows="3"></textarea>
+              </div><br>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary mb-2">Add</button>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary mb-2" (click)="closeAddProduct()">close</button>
+              </div>
+            </div>    
+          </form>
+      </div>
+      <div class="col-sm">
+        
+      </div>
+      <div class="col-sm">
+        
+      </div>
+    </div>
+  </div>
+

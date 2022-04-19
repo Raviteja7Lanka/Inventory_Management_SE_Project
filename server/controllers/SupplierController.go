@@ -133,9 +133,12 @@ func UpdateSupplier(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteSupplier(w http.ResponseWriter, r *http.Request) {
-	var supplier models.Suppliers
+	// var supplier models.Suppliers
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["supId"])
-	db.Delete(&supplier, queryParams["supId"])
+	er := db.Exec("delete from suppliers where supplier_id=?", queryParams["supId"]).Error
+	if er != nil {
+		json.NewEncoder(w).Encode("{Status:201, Message: Internal Error}")
+	}
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }

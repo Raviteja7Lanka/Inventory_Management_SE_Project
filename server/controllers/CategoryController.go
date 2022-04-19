@@ -66,9 +66,12 @@ func UpdateCategory(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteCategory(w http.ResponseWriter, r *http.Request) {
-	var category models.Categories
+	// var category models.Categories
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["catId"])
-	db.Delete(&category, queryParams["catId"])
+	er := db.Exec("delete from categories where category_id=?", queryParams["catId"]).Error
+	if er != nil {
+		json.NewEncoder(w).Encode("{Status:201, Message: Internal Error}")
+	}
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }

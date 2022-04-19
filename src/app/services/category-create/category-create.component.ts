@@ -17,7 +17,7 @@ export class CategoryCreateComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<any>(`http://localhost:8085/warehouse/all`).subscribe(res => {
       this.warehouses=res;
-      console.log(res)
+      // console.log(res)
   });   
 
     this.addCategoryForm = this.formBuilder.group(
@@ -32,7 +32,7 @@ export class CategoryCreateComponent implements OnInit {
 
   addCategory()
   {
-    console.log(this.addCategoryForm.value)
+    // console.log(this.addCategoryForm.value)
     this.http.post<any>("http://localhost:8085/category/add",this.addCategoryForm.value)
     .subscribe(res=>{
       alert("Added New Category");

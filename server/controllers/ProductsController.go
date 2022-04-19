@@ -137,9 +137,23 @@ func UpdateProduct(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteProduct(w http.ResponseWriter, r *http.Request) {
-	var products models.Products
+	//var products models.Products
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["prodId"])
-	db.Delete(&products, queryParams["prodId"])
+	er := db.Exec("delete from products where product_id=?", queryParams["prodId"]).Error
+	if er != nil {
+		json.NewEncoder(w).Encode("{Status:201, Message: Internal Error}")
+	}
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
+}
+
+func GetProductsByCategroyWarehouseID(w http.ResponseWriter, r *http.Request) {
+	var products []models.Products
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["wareId"])
+	db.Where("warehouse_id=? and category_id=?", queryParams["wareId"], queryParams["catId"]).Find(&products)
+	e := json.NewEncoder(w).Encode(products)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
 }

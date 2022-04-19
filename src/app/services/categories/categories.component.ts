@@ -32,7 +32,22 @@ export class CategoriesComponent implements OnInit {
   }
   viewProducts(category:any)
   {
-    
+    console.log(category);
+    let navigationExtras: NavigationExtras = {
+      state: {
+        category: category
+      }
+    };
+    // this.router.navigate(['/user/raja'], navigationExtras);
+    this.router.navigate(["/category-products"], navigationExtras);
   }
-
+  deleteCategory(category:any)
+  {
+    let category_id= category['category_id']
+    this.http.delete<any>(`http://localhost:8085/category/${category_id}`).subscribe(res => {
+      console.log(res);
+    });
+    let p=this.router.getCurrentNavigation()
+    this.router.navigate(['warehouse'])
+  }
 }

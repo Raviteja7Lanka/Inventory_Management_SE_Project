@@ -21,7 +21,7 @@ export class WarehouseComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get<any>(`http://localhost:8085/warehouse/all`).subscribe(res => {
-    console.log(res);
+    // console.log(res);
     this.warehouses=res;
   });
       
@@ -29,7 +29,7 @@ export class WarehouseComponent implements OnInit {
   
   viewCategories(warehouse:any)
   {
-    console.log(warehouse);
+    // console.log(warehouse);
     let navigationExtras: NavigationExtras = {
       state: {
         warehouse: warehouse
