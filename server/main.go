@@ -10,6 +10,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/handlers"
+
 	"github.com/gorilla/mux"
 )
 
@@ -75,6 +76,8 @@ func InitRouter() {
 	routes.RegisterWarehouseRoutes(router)
 	routes.RegisterCategoryRoutes(router)
 	// routes.RegisterPaymentRoutes(router)
+	// routes.RegisterPaymentRoutes(router)
+
 	corsObj := handlers.AllowedOrigins([]string{"http://localhost:4200"})
 	headersOk := handlers.AllowedHeaders([]string{"accept", "origin", "X-Requested-With", "Content-Type", "Authorization"})
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"})
@@ -82,7 +85,6 @@ func InitRouter() {
 	allowOptions := handlers.OptionStatusCode(204)
 
 	http.Handle("/", router)
-	// log.Fatal(http.ListenAndServe(":8085", nil))
 	log.Fatal(http.ListenAndServe(":8085", handlers.CORS(corsObj, headersOk, methodsOk, allowCreds, allowOptions)(router)))
 
 }
@@ -92,5 +94,4 @@ func main() {
 	// InitDB()
 	config.ConnectSqlite()
 	InitRouter()
-
 }

@@ -9,6 +9,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+<<<<<<< HEAD
 // func GetAllOrders(w http.ResponseWriter, r *http.Request) {
 // 	// w.Header().Set("Content-Type", "application/json")
 // 	Orders := models.GetAllOrders()
@@ -21,6 +22,9 @@ import (
 // 	w.WriteHeader(http.StatusOK)
 // 	w.Write(res)
 // }
+=======
+//var db *gorm.DB
+>>>>>>> 9fdea8a80f119ddc5d19842f5ca528dda4b08b2c
 
 // func GetOrderByID(w http.ResponseWriter, r *http.Request) {
 // 	// db.Raw("select id, date_of_order, order_details_id, Order_id, supplier_id, status from models.Orders where id=?",1).Scan(&order)

@@ -12,13 +12,13 @@ import (
 
 type Customers struct {
 	// gorm.Model
-	CUSTOMER_ID uint   `json:"customer_id"`
+	CUSTOMER_ID string   `json:"customer_id"`
 	FIRST_NAME  string `json:"first_name"`
 	LAST_NAME   string `json:"last_name"`
 	ADDRESS     string `json:"address"`
-	PHONE       uint   `json:"phone"`
+	PHONE       string   `json:"phone"`
 	EMAIL       string `json:"email"`
-	STAFF_ID    uint   `json:"staff_id"`
+	STAFF_ID    string   `json:"staff_id"`
 }
 
 /*
@@ -45,11 +45,11 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	var customers []Customers
 	e := db.Find(&customers).Error
 	if e != nil {
-		sendErr(w, http.StatusInternalServerError, err.Error())
+		sendErr(w, http.StatusInternalServerError, e.Error())
 		return
 	}
-	e = json.NewEncoder(w).Encode(customers)
-	if e != nil {
+	err:= json.NewEncoder(w).Encode(customers)
+	if err != nil {
 		sendErr(w, http.StatusInternalServerError, err.Error())
 	}
 }

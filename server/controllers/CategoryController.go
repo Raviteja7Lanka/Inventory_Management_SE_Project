@@ -3,7 +3,10 @@ package controllers
 import (
 	"apis/models"
 	"encoding/json"
+<<<<<<< HEAD
 	"fmt"
+=======
+>>>>>>> 9fdea8a80f119ddc5d19842f5ca528dda4b08b2c
 	"net/http"
 
 	"github.com/gorilla/mux"
