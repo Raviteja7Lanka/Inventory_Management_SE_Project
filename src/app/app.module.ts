@@ -39,6 +39,7 @@ import { WarehouseComponent } from './services/warehouse/warehouse.component';
 import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
 import { OrdersComponent } from './orders/orders.component';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 
 import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
@@ -110,7 +111,7 @@ import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
