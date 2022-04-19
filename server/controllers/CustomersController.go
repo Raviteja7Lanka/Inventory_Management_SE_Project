@@ -150,10 +150,12 @@ func UpdateCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteCustomer(w http.ResponseWriter, r *http.Request) {
-	var customer models.Customers
+	// var customer models.Customers
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["cusId"])
-	//db.Raw("delete from Orders where order_id=?", queryParams["ordId"])
-	db.Delete(&customer, queryParams["cusId"])
+	er := db.Exec("delete from customers where customer_id=?", queryParams["cusId"]).Error
+	if er != nil {
+		json.NewEncoder(w).Encode("{Status:201, Message: Internal Error}")
+	}
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }

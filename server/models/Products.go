@@ -18,6 +18,7 @@ type Products struct {
 	OTHER_DETAILS         string `json:"other_details"`
 	SUPPLIER_ID           string `json:"supplier_id"`
 	CATEGORY_ID           string `json:"category_id"`
+	WAREHOUSE_ID          string `json:"warehouse_id"`
 	//
 }
 

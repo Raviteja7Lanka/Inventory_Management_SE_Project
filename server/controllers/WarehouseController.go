@@ -55,9 +55,12 @@ func UpdateWarehouse(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteWarehouse(w http.ResponseWriter, r *http.Request) {
-	var warehouse models.Warehouses
+	// var warehouse models.Warehouses
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["wareId"])
-	db.Delete(&warehouse, queryParams["wareId"])
+	er := db.Exec("delete from warehouses where warehouse_id=?", queryParams["wareId"]).Error
+	if er != nil {
+		json.NewEncoder(w).Encode("{Status:201, Message: Internal Error}")
+	}
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }

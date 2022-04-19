@@ -44,7 +44,8 @@ const routes: Routes = [
        { path: 'warehouse-create',component:WarehouseCreateComponent},
        { path: 'warehouse-update',component:WarehouseUpdateComponent},
        { path: 'warehouse-categories',component:CategoriesComponent},
-       { path: 'category-create',component:CategoryCreateComponent}
+       { path: 'category-create',component:CategoryCreateComponent},
+       { path: 'category-products',component:CatproductComponent}
     ],
   },
 
