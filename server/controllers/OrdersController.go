@@ -9,7 +9,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-<<<<<<< HEAD
 // func GetAllOrders(w http.ResponseWriter, r *http.Request) {
 // 	// w.Header().Set("Content-Type", "application/json")
 // 	Orders := models.GetAllOrders()
@@ -22,9 +21,6 @@ import (
 // 	w.WriteHeader(http.StatusOK)
 // 	w.Write(res)
 // }
-=======
-//var db *gorm.DB
->>>>>>> 9fdea8a80f119ddc5d19842f5ca528dda4b08b2c
 
 // func GetOrderByID(w http.ResponseWriter, r *http.Request) {
 // 	// db.Raw("select id, date_of_order, order_details_id, Order_id, supplier_id, status from models.Orders where id=?",1).Scan(&order)
@@ -98,6 +94,25 @@ func GetAllCustomerOrders(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
 	var orders []models.Orders
 	e := db.Find(&orders).Error
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+		return
+	}
+	e = json.NewEncoder(w).Encode(orders)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
+
+}
+
+func GetAllCustomerOrdersByStatus(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	var orders []models.Orders
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["ordStatus"])
+	e := db.Where("Status=?", queryParams["ordStatus"]).Find(&orders).Error
 	if e != nil {
 		sendErr(w, http.StatusInternalServerError, e.Error())
 		return

@@ -4,14 +4,14 @@
     <div class="row">
       <div class="col-sm">
         <h2>Add new warehouse</h2>
-        <form>
+        <form [formGroup]="addWarehouseForm" (ngSubmit)="addWarehouse()">
             <div class="form-group">
-              <label for="warehouseName"><h3>Warehouse Name</h3></label>
-              <input type="email" class="form-control" id="warehouseName">
+              <label for="name"><h3>Warehouse Name</h3></label>
+              <input type="email" class="form-control" formControlName="name" id="name">
             </div><br><br>
-            <div class="form-group">
-              <label for="warehouseLocationSelect1"><h3>Warehouse Location</h3></label>
-              <select class="form-control" id="warehouseLocationSelect1">
+            <div class="form-group" >
+              <label for="location"><h3>Warehouse Location</h3></label>
+              <select class="form-control" formControlName="location" id="location">
                 <option>Texas</option>
                 <option>California</option>
                 <option>Florida</option>
@@ -20,12 +20,12 @@
               </select>
             </div><br><br>
             <div class="form-group">
-                <label for="warehouseCapacity"><h3>Warehouse Capacity (in unit products)</h3></label>
-                <input type="email" class="form-control" id="warehouseCapacity">
+                <label for="capacity"><h3>Warehouse Capacity (in unit products)</h3></label>
+                <input type="email" class="form-control" formControlName="capacity" id="capacity">
               </div><br><br>
             <div class="form-group">
-              <label for="wareHouseDescription">Warehouse Description</label>
-              <textarea class="form-control" id="wareHouseDescription" rows="3"></textarea>
+              <label for="description">Warehouse Description</label>
+              <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
             </div><br><br>
             <button type="submit" class="btn btn-primary mb-2">Add Warehouse</button>
           </form>

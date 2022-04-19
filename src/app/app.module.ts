@@ -53,6 +53,7 @@ import { OutstandingordersComponent } from './orders/outstandingorders/outstandi
 import { AddorderComponent } from './orders/addorder/addorder.component';
 import { EditorderComponent } from './orders/editorder/editorder.component';
 import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component';
+import { CategoryCreateComponent } from './services/category-create/category-create.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component
     AddorderComponent,
     EditorderComponent,
     DeleteorderComponent,
+    CategoryCreateComponent,
   ],
   imports: [
     BrowserModule,

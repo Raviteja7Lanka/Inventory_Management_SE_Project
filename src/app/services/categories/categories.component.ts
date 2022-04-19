@@ -8,6 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CategoriesComponent implements OnInit {
   warehouse=null;
+  categories=null;
   constructor(private router: Router,private http: HttpClient ) { 
     let p=this.router.getCurrentNavigation()
     if (p!=null && p.extras.state) {
@@ -18,13 +19,20 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
 
     console.log("From Categories");
+    console.log(this.warehouse)
     if(this.warehouse!= null)
     {
       let warehouse_id= this.warehouse['warehouse_id']==null?'0': this.warehouse['warehouse_id'];
-      this.http.get<any>(`http://localhost:8085/categoreies/${warehouse_id}`).subscribe(res => {
+      console.log(warehouse_id)
+      this.http.get<any>(`http://localhost:8085/warehouse-categories/${warehouse_id}`).subscribe(res => {
       console.log(res);
+      this.categories=res;
     });
     }
+  }
+  viewProducts(category:any)
+  {
+    
   }
 
 }

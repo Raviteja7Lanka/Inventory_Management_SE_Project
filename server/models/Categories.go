@@ -9,7 +9,7 @@ import (
 type Categories struct {
 	gorm.Model
 	CATEGORY_ID  string `json:"category_id"`
-	WAREHOUSE_ID string `json:"category_id"`
+	WAREHOUSE_ID string `json:"warehouse_id"`
 	NAME         string `json:"name"`
 	DESCRIPTION  string `json:"description"`
 }

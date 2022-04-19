@@ -3,10 +3,7 @@ package controllers
 import (
 	"apis/models"
 	"encoding/json"
-<<<<<<< HEAD
 	"fmt"
-=======
->>>>>>> 9fdea8a80f119ddc5d19842f5ca528dda4b08b2c
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -38,7 +35,7 @@ func GetCategoryByID(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetCategoriesByWarehouseID(w http.ResponseWriter, r *http.Request) {
-	var categories models.Categories
+	var categories []models.Categories
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["wareId"])
 	db.Where("warehouse_id=?", queryParams["wareId"]).Find(&categories)
