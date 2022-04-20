@@ -1,6 +1,7 @@
 {
   "name": "inventory-management",
   "version": "0.0.0",
+  "homepage": "https://Raviteja7Lanka.github.io/Inventory_Management_SE_Project",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
