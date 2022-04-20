@@ -17,25 +17,18 @@
     </ng-container>
 
     <!-- Address Column -->
-    <ng-container matColumnDef="customer_id">
-      <th class="tbheader" mat-header-cell *matHeaderCellDef>Customer ID</th>
+    <ng-container matColumnDef="order_type">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Order Place By</th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        {{ element.customer_id }}
+        {{ element.order_type }}
       </td>
     </ng-container>
 
-    <!-- Phone Number Column -->
-    <ng-container matColumnDef="supplier_id">
-      <th class="tbheader" mat-header-cell *matHeaderCellDef>Suppplier ID</th>
-      <td class="tbdata" mat-cell *matCellDef="let element">
-        {{ element.supplier_id }}
-      </td>
-    </ng-container>
 
     <ng-container matColumnDef="order_Details">
       <th class="tbheader" mat-header-cell *matHeaderCellDef>Details</th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        <a href="#">View Details</a>
+        <a href="#" > View Details</a>
       </td>
     </ng-container>
 

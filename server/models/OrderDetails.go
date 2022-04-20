@@ -2,20 +2,22 @@ package models
 
 import (
 	"apis/config"
+
+	"gorm.io/gorm"
 )
 
 type OrderDetails struct {
-	// gorm.Model
-	OrderDetailsId uint    `json:"order_details_id"`
-	UnitPrice      string  `json:"UnitPrice"`
-	Size           uint    `json:"size"` //blob is there in schema
-	Quantity       uint    `json:"quantity"`
-	Discount       float64 `json:"discount"`
-	Total          float64 `json:"total"`
-	Date           string  `json:"date"`
-	ProductId      string  `json:"product_id"`
-	OrderId        string  `json:"order_id"`
-	BillNumber     uint    `json:"billnumber"`
+	gorm.Model
+	OrderDetailsId string `json:"order_details_id"`
+	UnitPrice      string `json:"unit_price"`
+	Size           uint   `json:"size"` //blob is there in schema
+	Quantity       uint   `json:"quantity"`
+	Discount       uint   `json:"discount"`
+	Total          uint   `json:"total"`
+	Date           string `json:"date"`
+	ProductId      string `json:"product_id"`
+	OrderId        string `json:"order_id"`
+	BillNumber     string `json:"billnumber"`
 }
 
 func init() {
