@@ -39,7 +39,8 @@ import { WarehouseComponent } from './services/warehouse/warehouse.component';
 import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
 import { OrdersComponent } from './orders/orders.component';
-
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
 import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
 import { CatproductComponent } from './products/catproduct/catproduct.component';
@@ -54,6 +55,7 @@ import { AddorderComponent } from './orders/addorder/addorder.component';
 import { EditorderComponent } from './orders/editorder/editorder.component';
 import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component';
 import { CategoryCreateComponent } from './services/category-create/category-create.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,7 @@ import { CategoryCreateComponent } from './services/category-create/category-cre
     EditorderComponent,
     DeleteorderComponent,
     CategoryCreateComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +108,7 @@ import { CategoryCreateComponent } from './services/category-create/category-cre
     MatToolbarModule,
     MatSidenavModule,
     FlexLayoutModule,
+    MatMenuModule,
     MatIconModule,
     MatCardModule,
     MatGridListModule,
@@ -114,7 +118,7 @@ import { CategoryCreateComponent } from './services/category-create/category-cre
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
