@@ -27,8 +27,7 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm install -g @angular/cli
-        ng build --base-href /Inventory_Management_SE_Project/
+        npm run deploy
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
