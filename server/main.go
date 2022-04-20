@@ -32,7 +32,7 @@ func InitRouter() {
 	// router.HandleFunc("/customer/orders/{ordId}", deleteCustomerOrder).Methods("DELETE")
 	routes.RegisterCustomerRoutes(router)
 	routes.RegisterOrderRoutes(router)
-
+	routes.RegisterOrderDetailsRoutes(router)
 	// router.HandleFunc("/customer/all", getAllCustomers).Methods("GET")
 	// router.HandleFunc("/customer/{custId}", getCustomerByID).Methods("GET")
 	// router.HandleFunc("/customer/add", addCustomer).Methods("POST")

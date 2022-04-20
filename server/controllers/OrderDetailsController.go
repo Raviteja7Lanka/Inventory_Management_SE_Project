@@ -31,7 +31,8 @@ func GetOrderDetailsByID(w http.ResponseWriter, r *http.Request) {
 	// fmt.Fprint(w, string(data))
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["ordId"])
-	db.First(&order_details, queryParams["ordId"])
+	db.Raw("select * from order_details where order_id=?", queryParams["ordId"]).Scan(&order_details)
+	// db.First(&order_details, queryParams["ordId"])
 	e := json.NewEncoder(w).Encode(order_details)
 	if e != nil {
 		sendErr(w, http.StatusInternalServerError, e.Error())

@@ -1,0 +1,114 @@
+<div class="orders-content">
+    <mat-tab-group
+      class="Tabs"
+      mat-align-tabs="center"
+      animationDuration="1000ms"
+      backgroundColor="primary">
+
+    <mat-tab class="tab" label="Outstanding Orders">
+        <div class="tabcontent">
+          
+            <div class="orders-container">
+                <table class="table" mat-table [dataSource]="outstanding_orders">
+                  <!-- Supplier Id Column -->
+                  <ng-container matColumnDef="order_id">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Order Id</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      {{ element.order_id }}
+                    </td>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="date_of_order">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Date</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      {{ element.date_of_order}}
+                    </td>
+                  </ng-container>
+              
+                  <!-- Address Column -->
+                  <ng-container matColumnDef="order_type">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Order Placed By</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      {{ element.order_type }}
+                    </td>
+                  </ng-container>
+              
+              
+                  <ng-container matColumnDef="action">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Action</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      <table>
+                        <tbody>
+                          <tr>
+                       <td><button mat-raised-button (click)="viewOrderDetails(element)">View Details</button></td>
+                      <td><button mat-raised-button (click)="markOrderComplete(element)">Mark Complete</button> </td>
+                      </tr>
+                      </tbody>
+                      </table>
+                    </td>
+                  </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+              </div>
+              
+
+        </div>
+      </mat-tab>
+
+      <mat-tab class="tab" label="Completed Orders">
+        <div class="tabcontent">
+          
+            <div class="orders-container">
+                <table class="table" mat-table [dataSource]="outstanding_orders">
+                  <!-- Supplier Id Column -->
+                  <ng-container matColumnDef="order_id">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Order Id</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      {{ element.order_id }}
+                    </td>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="date_of_order">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Date</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      {{ element.date_of_order}}
+                    </td>
+                  </ng-container>
+              
+                  <!-- Address Column -->
+                  <ng-container matColumnDef="order_type">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Order Placed By</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      {{ element.order_type }}
+                    </td>
+                  </ng-container>
+              
+              
+                  <ng-container matColumnDef="action">
+                    <th class="tbheader" mat-header-cell *matHeaderCellDef>Action</th>
+                    <td class="tbdata" mat-cell *matCellDef="let element">
+                      <table>
+                        <tbody>
+                          <tr>
+                       <td><button mat-raised-button (click)="viewOrderDetails(element)">View Details</button></td>
+                      <td><button mat-raised-button (click)="markOrderComplete(element)">Mark Complete</button> </td>
+                      </tr>
+                      </tbody>
+                      </table>
+                    </td>
+                  </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+              </div>
+
+        </div>
+      </mat-tab>
+      
+    </mat-tab-group>
+  </div>

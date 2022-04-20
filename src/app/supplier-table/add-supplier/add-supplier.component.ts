@@ -35,6 +35,7 @@ export class AddSupplierComponent implements OnInit {
           alert('Supplier Added Successfully');
           this.addSupplierForm.reset();
           this.dialogRef.close();
+          location.reload();
         },
         error: () => {
           alert(

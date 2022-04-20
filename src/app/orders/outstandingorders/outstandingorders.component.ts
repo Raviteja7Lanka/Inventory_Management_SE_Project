@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { OrderDetailsComponent } from '../order-details/order-details.component';
 
 @Component({
   selector: 'app-outstandingorders',
@@ -9,10 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./outstandingorders.component.css'],
 })
 export class OutstandingordersComponent implements OnInit {
-  constructor(private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
+  constructor(private dialog: MatDialog,private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
 
   ngOnInit(): void {
-    this.http.get<any>(`http://localhost:8085/orders/status/payment_outstanding`).subscribe(res => {
+    this.http.get<any>(`http://localhost:8085/orders/status/outstanding`).subscribe(res => {
       this.datasource=res;
       console.log(res)
   });   
@@ -72,6 +74,32 @@ export class OutstandingordersComponent implements OnInit {
     'order_id',
     'date_of_order',
     'order_type',
-    'order_Details',
+    'action',
   ];
+  viewOrderDetails(order:any)
+  {
+    
+    this.dialog.open(OrderDetailsComponent, {
+      width: '80%',
+      height:'60%',
+      data: order
+    });
+  }
+  markOrderComplete(order:any)
+  {
+    if(order!=null)
+    {
+      order.order_status="completed"
+    }
+    this.http.put<any>(`http://localhost:8085/orders/${order.order_id}`,order)
+    .subscribe(res=>{
+      alert("Order Marked Complete");
+      
+      // this .router.navigate(['warehouse']);
+    },err=>{
+      alert("something went wrong")
+    }); 
+    
+  }
+
 }

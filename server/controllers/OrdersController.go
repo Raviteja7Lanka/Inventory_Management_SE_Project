@@ -181,3 +181,40 @@ func GetAllOrdersByType(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+
+func GetAllOrdersByOrderBy(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	var orders []models.Orders
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["ordBy"])
+	e := db.Where("order_by=?", queryParams["ordBy"]).Find(&orders).Error
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+		return
+	}
+	e = json.NewEncoder(w).Encode(orders)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
+}
+
+func GetAllOrdersByOrderByAndStatus(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	var orders []models.Orders
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["ordBy"])
+	fmt.Println(queryParams["ordStatus"])
+	e := db.Where("order_by=? and order_status=?", queryParams["ordBy"], queryParams["ordStatus"]).Find(&orders).Error
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+		return
+	}
+	e = json.NewEncoder(w).Encode(orders)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
+}

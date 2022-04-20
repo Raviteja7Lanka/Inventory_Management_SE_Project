@@ -14,7 +14,7 @@ type OrderDetails struct {
 	Quantity       uint   `json:"quantity"`
 	Discount       uint   `json:"discount"`
 	Total          uint   `json:"total"`
-	Date           string `json:"date"`
+	DateOfOrder    string `json:"date_of_order"`
 	ProductId      string `json:"product_id"`
 	OrderId        string `json:"order_id"`
 	BillNumber     string `json:"billnumber"`
