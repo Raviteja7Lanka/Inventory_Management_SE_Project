@@ -6,12 +6,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func RegisterCustomerOrderRoutes(router *mux.Router) {
+func RegisterOrderRoutes(router *mux.Router) {
 
-	router.HandleFunc("/customer/orders/all", controllers.GetAllCustomerOrders).Methods("GET")
-	router.HandleFunc("/customer/order/{ordId}", controllers.GetCustomerOrderByID).Methods("GET")
-	router.HandleFunc("/customer/order/status/{ordStatus}", controllers.GetAllCustomerOrdersByStatus).Methods("GET")
-	router.HandleFunc("/customer/orders/{ordId}", controllers.UpdateCustomerOrder).Methods("PUT")
-	router.HandleFunc("/customer/orders/add", controllers.AddCustomerOrder).Methods("POST")
-	router.HandleFunc("/customer/orders/{ordId}", controllers.DeleteCustomerOrder).Methods("DELETE")
+	router.HandleFunc("/orders/all", controllers.GetAllOrders).Methods("GET")
+	router.HandleFunc("/order/{ordId}", controllers.GetOrderByID).Methods("GET")
+	router.HandleFunc("/order/status/{ordStatus}", controllers.GetAllOrdersByStatus).Methods("GET")
+	router.HandleFunc("/order/type/{ordType}", controllers.GetAllOrdersByType).Methods("GET")
+	router.HandleFunc("/orders/{ordId}", controllers.UpdateOrder).Methods("PUT")
+	router.HandleFunc("/orders/add", controllers.AddOrder).Methods("POST")
+	router.HandleFunc("/orders/{ordId}", controllers.DeleteOrder).Methods("DELETE")
 }

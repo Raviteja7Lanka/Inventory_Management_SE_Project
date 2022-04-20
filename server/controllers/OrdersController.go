@@ -88,7 +88,7 @@ import (
 
 // }
 
-func GetAllCustomerOrders(w http.ResponseWriter, r *http.Request) {
+func GetAllOrders(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
@@ -105,14 +105,14 @@ func GetAllCustomerOrders(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func GetAllCustomerOrdersByStatus(w http.ResponseWriter, r *http.Request) {
+func GetAllOrdersByStatus(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
 	var orders []models.Orders
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["ordStatus"])
-	e := db.Where("Status=?", queryParams["ordStatus"]).Find(&orders).Error
+	e := db.Where("order_status=?", queryParams["ordStatus"]).Find(&orders).Error
 	if e != nil {
 		sendErr(w, http.StatusInternalServerError, e.Error())
 		return
@@ -124,26 +124,26 @@ func GetAllCustomerOrdersByStatus(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func GetCustomerOrderByID(w http.ResponseWriter, r *http.Request) {
+func GetOrderByID(w http.ResponseWriter, r *http.Request) {
 	var order models.Orders
 
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["ordId"])
-	db.First(&order, queryParams["ordId"])
+	db.Raw("select * from orders where order_id=?", queryParams["ordId"]).Scan(&order)
 	e := json.NewEncoder(w).Encode(order)
 	if e != nil {
 		sendErr(w, http.StatusInternalServerError, e.Error())
 	}
 }
-func AddCustomerOrder(w http.ResponseWriter, r *http.Request) {
+func AddOrder(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var order models.Orders
+	fmt.Println(order)
 	json.NewDecoder(r.Body).Decode(&order)
 	db.Create(&order)
 	json.NewEncoder(w).Encode(order)
-	// fmt.Println("Hello")
 }
-func UpdateCustomerOrder(w http.ResponseWriter, r *http.Request) {
+func UpdateOrder(w http.ResponseWriter, r *http.Request) {
 	var order models.Orders
 	var updatedOrder models.Orders
 	queryParams := mux.Vars(r)
@@ -155,10 +155,29 @@ func UpdateCustomerOrder(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func DeleteCustomerOrder(w http.ResponseWriter, r *http.Request) {
+func DeleteOrder(w http.ResponseWriter, r *http.Request) {
 	var order models.Orders
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["ordId"])
 	db.Delete(&order, queryParams["ordId"])
 	json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
+}
+
+func GetAllOrdersByType(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	var orders []models.Orders
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["ordType"])
+	e := db.Where("order_type=?", queryParams["ordType"]).Find(&orders).Error
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+		return
+	}
+	e = json.NewEncoder(w).Encode(orders)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
+
 }

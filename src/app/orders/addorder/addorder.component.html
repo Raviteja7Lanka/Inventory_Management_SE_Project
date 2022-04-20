@@ -1,3 +1,61 @@
+<<<<<<< HEAD
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h2>New Order Request</h2>
+        <form [formGroup]="addOrderForm" (ngSubmit)="addOrder()" > 
+            <!-- -->
+            <div class="form-group">
+              <label for="order_name">Order Name</label>
+              <input type="text" class="form-control" formControlName="order_name" id="order_name">
+            </div><br>
+           
+            <div class="form-group">
+              <label for="order_descr_ip_tion">Order Description</label>
+              <textarea class="form-control" formControlName="order_descr_ip_tion" id="order_descr_ip_tion" rows="3"></textarea>
+            </div><br>
+            <div class="form-group">
+                <label for="order_price">Price</label>
+                <input type="text" class="form-control" formControlName="order_price" id="order_price" rows="3">
+              </div><br>
+               <!-- <div class="form-group" >
+                <label for="supplier_id"><h3>Select Supplier</h3></label>
+                <select class="form-control" formControlName="supplier_id" id="supplier_id" >
+                  <option *ngFor="let supplier of suppliers" value="{{supplier.supplier_id}}" >{{supplier.name}}</option>
+                </select>
+              </div><br><br> -->
+              <div class="form-group">
+                <label for="order_unit">Order Measurement Units</label>
+                <input type="text" class="form-control" formControlName="order_unit" id="order_unit" rows="3">
+              </div><br>
+              <div class="form-group">
+                <label for="order_quantity">Order Volume in cubic cm.</label>
+                <input type="text" class="form-control" formControlName="order_quantity" id="order_quantity" rows="3">
+              </div><br>
+              <div class="form-group">
+                <label for="other_details">Order Description</label>
+                <textarea class="form-control" formControlName="other_details" id="other_details" rows="3"></textarea>
+              </div><br>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary mb-2">Add</button>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary mb-2" (click)="closeAddOrder()">close</button>
+              </div>
+            </div>    
+          </form>
+      </div>
+      <div class="col-sm">
+        
+      </div>
+      <div class="col-sm">
+        
+      </div>
+    </div>
+  </div>
+
+=======
 <h1 mat-dialog-title>Please Enter the Order Details</h1>
 <div mat-dialog-content>
   <form [formGroup]="addOrderForm">
@@ -60,3 +118,4 @@
     Cancel
   </button>
 </div>
+>>>>>>> e5e0ea2d36763bee6cb148035414e4eb72e47e8f

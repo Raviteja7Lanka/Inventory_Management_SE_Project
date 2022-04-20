@@ -11,9 +11,8 @@ type Orders struct {
 	OrderId        string `json:"order_id"`
 	DateOfOrder    string `json:"date_of_order"`
 	OrderDetailsId string `json:"order_details_id"`
-	OrderrId       string `json:"Order_id"`
-	SupplierId     string `json:"supplier_id"`
-	Status         string `json:"status"`
+	OrderType      string `json:"order_type"`
+	OrderStatus    string `json:"order_status"`
 }
 
 func init() {
