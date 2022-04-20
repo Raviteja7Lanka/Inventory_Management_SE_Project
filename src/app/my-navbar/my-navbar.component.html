@@ -27,9 +27,26 @@
       <div class="spacer"></div>
       <a mat-button routerLink="home">Home</a>
 
-      <a mat-raised-button routerLink="/login" color="accent">Logout</a>
-      
-        
+      <!-- <a mat-raised-button routerLink="/login" color="accent">Logout</a> -->
+      <!-- <button mat-button [matMenuTriggerFor]="menu">User</button>
+      <mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+      </mat-menu> -->
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/profile">
+          <mat-icon>perm_identity</mat-icon>
+          <span>profile</span>
+        </button>
+        <button mat-menu-item routerLink="/login" color="accent">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+
       
       <!-- <a mat-button>About</a>
         <a mat-raised-button color="accent">Sign up</a> -->

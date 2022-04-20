@@ -17,6 +17,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
 import { CatproductComponent } from './products/catproduct/catproduct.component';
 import { CategoriesComponent } from './services/categories/categories.component';
+import { ProfileComponent } from './profile/profile.component';
 import { CategoryCreateComponent } from './services/category-create/category-create.component';
 
 const routes: Routes = [
@@ -45,7 +46,8 @@ const routes: Routes = [
        { path: 'warehouse-update',component:WarehouseUpdateComponent},
        { path: 'warehouse-categories',component:CategoriesComponent},
        { path: 'category-create',component:CategoryCreateComponent},
-       { path: 'category-products',component:CatproductComponent}
+       { path: 'category-products',component:CatproductComponent},
+       { path: 'profile',component:ProfileComponent}
     ],
   },
 
