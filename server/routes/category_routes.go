@@ -9,8 +9,9 @@ import (
 func RegisterCategoryRoutes(router *mux.Router) {
 
 	router.HandleFunc("/category/all", controllers.GetAllCategories).Methods("GET")
-	router.HandleFunc("/category/{catID}", controllers.GetCategoriesByID).Methods("GET")
-	router.HandleFunc("/category/{catID}", controllers.UpdateCategories).Methods("PUT")
-	router.HandleFunc("/category/add", controllers.AddCategories).Methods("POST")
-	router.HandleFunc("/category/{catID}", controllers.DeleteCategories).Methods("DELETE")
+	router.HandleFunc("/category/{catId}", controllers.GetCategoryByID).Methods("GET")
+	router.HandleFunc("/warehouse-categories/{wareId}", controllers.GetCategoriesByWarehouseID).Methods("GET")
+	router.HandleFunc("/category/{catId}", controllers.UpdateCategory).Methods("PUT")
+	router.HandleFunc("/category/add", controllers.AddCategory).Methods("POST")
+	router.HandleFunc("/category/{catId}", controllers.DeleteCategory).Methods("DELETE")
 }

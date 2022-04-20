@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-progressorders',
@@ -57,9 +60,16 @@ export class ProgressordersComponent implements OnInit {
       order_Details: 'nothing',
     },
   ];
-  constructor() {}
+  constructor(private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.http.get<any>(`http://localhost:8085/orders/status/in_progress`).subscribe(res => {
+      this.datasource=res;
+      console.log(res)
+  });   
+
+  }
 
   displayedColumns = [
     'order_id',

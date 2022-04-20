@@ -39,6 +39,7 @@ import { WarehouseComponent } from './services/warehouse/warehouse.component';
 import { WarehouseUpdateComponent } from './services/warehouse-update/warehouse-update.component';
 import { WarehouseCreateComponent } from './services/warehouse-create/warehouse-create.component';
 import { OrdersComponent } from './orders/orders.component';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 
 import { ReportsComponent } from './reports/reports.component';
 import { AboutComponent } from './about/about.component';
@@ -46,12 +47,14 @@ import { CatproductComponent } from './products/catproduct/catproduct.component'
 import { AddproductComponent } from './products/catproduct/addproduct/addproduct.component';
 import { DeleteproductComponent } from './products/catproduct/deleteproduct/deleteproduct.component';
 import { EditproductComponent } from './products/catproduct/editproduct/editproduct.component';
+import { CategoriesComponent } from './services/categories/categories.component';
 import { PendingordersComponent } from './orders/pendingorders/pendingorders.component';
 import { ProgressordersComponent } from './orders/progressorders/progressorders.component';
 import { OutstandingordersComponent } from './orders/outstandingorders/outstandingorders.component';
 import { AddorderComponent } from './orders/addorder/addorder.component';
 import { EditorderComponent } from './orders/editorder/editorder.component';
 import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component';
+import { CategoryCreateComponent } from './services/category-create/category-create.component';
 
 @NgModule({
   declarations: [
@@ -81,12 +84,14 @@ import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component
     AddproductComponent,
     DeleteproductComponent,
     EditproductComponent,
+    CategoriesComponent,
     PendingordersComponent,
     ProgressordersComponent,
     OutstandingordersComponent,
     AddorderComponent,
     EditorderComponent,
     DeleteorderComponent,
+    CategoryCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,7 +115,7 @@ import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

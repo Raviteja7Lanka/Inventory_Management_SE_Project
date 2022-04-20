@@ -1,1 +1,62 @@
-<p>editorder works!</p>
+<h1 mat-dialog-title>Please Enter the Order Details</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editOrderForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Date</mat-label>
+      <input formControlName="date" matInput placeholder="MM/DD/YYYY" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Order Id</mat-label>
+      <input formControlName="order_Id" matInput placeholder="Order ID " />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Customer Id</mat-label>
+      <input
+        formControlName="customer_Id"
+        matInput
+        placeholder="Customer ID "
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Supplier Id</mat-label>
+      <input formControlName="supplier_Id" matInput placeholder="Supplier ID" />
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+
+      <input formControlName="phone" matInput placeholder="Mobile Number " />
+    </mat-form-field> -->
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-select placeholder="Status">
+        <mat-option>!</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="outline">
+      <mat-select placeholder="Status" formControlName="orderStatus">
+        <mat-option>Progress</mat-option>
+        <mat-option>Pending</mat-option>
+        <mat-option>Outstanding</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="orderEdit()">
+    Edit Order
+  </button>
+  <button
+    id="editOrderFormCancel"
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+  >
+    Cancel
+  </button>
+</div>
