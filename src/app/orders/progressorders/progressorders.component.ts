@@ -60,15 +60,19 @@ export class ProgressordersComponent implements OnInit {
     //   order_Details: 'nothing',
     // },
   ];
-  constructor(private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-
-    this.http.get<any>(`http://localhost:8085/order/status/in_progress`).subscribe(res => {
-      this.datasource=res;
-      console.log(res)
-  });   
-
+    this.http
+      .get<any>(`http://localhost:8085/order/status/in_progress`)
+      .subscribe((res) => {
+        this.datasource = res;
+        console.log(res);
+      });
   }
 
   displayedColumns = [
@@ -77,4 +81,5 @@ export class ProgressordersComponent implements OnInit {
     'order_type',
     'order_Details',
   ];
+  viewOrderDetails(element: any) {}
 }
