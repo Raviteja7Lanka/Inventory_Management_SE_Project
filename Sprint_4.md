@@ -7,6 +7,7 @@ While focusing on the removal of slow-selling products and increasing the number
 
 ## Team Members:
 Frontend: Ravi Teja Lanka, Nithin Meela.
+
 Backend: Surya Mandapati, Sai Kiran Madipadige.
 
 
