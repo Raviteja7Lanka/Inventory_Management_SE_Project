@@ -14,6 +14,6 @@
 
 ### Link for the Project Board:
 
-# Link for Sprint_4 Deliverables:
+### Link for Sprint_4 Deliverables:
 
-# Bonus Deploy Production link:
+### Bonus Deploy Production link:
