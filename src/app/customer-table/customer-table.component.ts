@@ -4,6 +4,8 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { NavigationExtras, Route, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customer-table',
@@ -11,7 +13,7 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
   styleUrls: ['./customer-table.component.css'],
 })
 export class CustomerTableComponent implements OnInit {
-  constructor(private dialog: MatDialog,private api: ApiService) {}
+  constructor(private dialog: MatDialog,private api: ApiService,private router:Router,private http: HttpClient) {}
   datasource: any;
   ngOnInit(): void {
     this.api.getAllCustomers().subscribe(res => {
@@ -45,6 +47,26 @@ export class CustomerTableComponent implements OnInit {
     this.dialog.open(EditCustomerComponent, {
       width: '40%',
     });
+  }
+  viewOrders(customer:any)
+  {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        customer: customer
+      }
+    };
+    // this.router.navigate(['/user/raja'], navigationExtras);
+    this.router.navigate(["/view-customer-orders"], navigationExtras);
+
+  }
+  deleteCustomer(customer:any)
+  {
+    let customer_id= customer['customer_id']
+    this.http.delete<any>(`http://localhost:8085/customer/${customer_id}`).subscribe(res => {
+      console.log(res);
+      location.reload();
+    });
+  
   }
 
 

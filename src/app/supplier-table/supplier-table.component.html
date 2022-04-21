@@ -81,6 +81,7 @@
       <th class="tbheader" mat-header-cell *matHeaderCellDef></th>
       <td class="tbdata" mat-cell *matCellDef="let element">
         <button mat-raised-button (click)="viewOrders(element)">View Orders</button>
+        <button mat-raised-button color="warn" (click)="deleteSupplier(element)">Delete</button>
       </td>
     </ng-container>
 

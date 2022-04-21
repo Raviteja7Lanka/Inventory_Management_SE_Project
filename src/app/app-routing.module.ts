@@ -21,6 +21,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CategoryCreateComponent } from './services/category-create/category-create.component';
 import { OrderDetailsComponent } from './orders/order-details/order-details.component';
 import { ViewOrdersComponent } from './supplier-table/view-orders/view-orders.component';
+import { ViewCustomerOrdersComponent } from './customer-table/view-customer-orders/view-customer-orders.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -51,7 +52,8 @@ const routes: Routes = [
        { path: 'category-products',component:CatproductComponent},
        { path: 'profile',component:ProfileComponent},
        { path: 'order_details',component:OrderDetailsComponent},
-       { path: 'view-orders',component:ViewOrdersComponent}
+       { path: 'view-orders',component:ViewOrdersComponent},
+       { path: 'view-customer-orders',component:ViewCustomerOrdersComponent}
     ],
   },
 

@@ -157,3 +157,14 @@ func GetProductsByCategroyWarehouseID(w http.ResponseWriter, r *http.Request) {
 		sendErr(w, http.StatusInternalServerError, e.Error())
 	}
 }
+
+func GetProductsByCategroyID(w http.ResponseWriter, r *http.Request) {
+	var products []models.Products
+	queryParams := mux.Vars(r)
+	fmt.Println(queryParams["wareId"])
+	db.Where("category_id=?", queryParams["catId"]).Find(&products)
+	e := json.NewEncoder(w).Encode(products)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, e.Error())
+	}
+}
