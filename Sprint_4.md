@@ -15,6 +15,13 @@ Backend: Surya Mandapati, Sai Kiran Madipadige.
 
 ### Cypress Test & unit Test vedio:
 
+## Result of the Unit Test Cases
+<img width="1439" alt="KarmaScreenshot" src="https://user-images.githubusercontent.com/94930984/161365933-b1b74263-e2fa-4d1f-90b1-b26280e48666.png">
+
+## How to run Karma Unit Testing
+
+- ng test
+
 ### Backend Unit Test vedio:
 
 
