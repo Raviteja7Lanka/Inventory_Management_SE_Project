@@ -15,10 +15,10 @@ Backend: Surya Mandapati, Sai Kiran Madipadige.
 
 ### Cypress Test & unit Test vedio:
 
-## Result of the Unit Test Cases
+### Result of the Unit Test Cases
 <img width="1439" alt="KarmaScreenshot" src="https://user-images.githubusercontent.com/94930984/161365933-b1b74263-e2fa-4d1f-90b1-b26280e48666.png">
 
-## How to run Karma Unit Testing
+### How to run Karma Unit Testing
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
@@ -33,7 +33,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ### Bonus Deploy Production link:
 
-## Further help
+### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
