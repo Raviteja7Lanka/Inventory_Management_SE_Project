@@ -28,7 +28,7 @@
     <ng-container matColumnDef="order_Details">
       <th class="tbheader" mat-header-cell *matHeaderCellDef>Details</th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        <a href="#">View Details</a>
+        <button mat-raised-button (click)="viewOrderDetails(element)">View Details</button>
       </td>
     </ng-container>
 

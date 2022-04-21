@@ -61,5 +61,16 @@ export class CatproductComponent implements OnInit {
 
   }
 
+  deleteProduct(product:any)
+  {
+    let product_id= product['products_id']
+    this.http.delete<any>(`http://localhost:8085/product/${product_id}`).subscribe(res => {
+      console.log(res);
+    });
+    let p=this.router.getCurrentNavigation()
+    this.router.navigate(['warehouse'])
+    
+  }
+
 }
 

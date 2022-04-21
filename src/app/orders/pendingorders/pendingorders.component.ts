@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { OrderDetailsComponent } from '../order-details/order-details.component';
 
 @Component({
   selector: 'app-pendingorders',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./pendingorders.component.css'],
 })
 export class PendingordersComponent implements OnInit {
-  constructor(private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
+  constructor(private dialog: MatDialog,private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
   datasource= [];
   ngOnInit(): void {
 
@@ -18,7 +20,15 @@ export class PendingordersComponent implements OnInit {
       console.log(res)
   });   
   }
-
+  viewOrderDetails(order:any)
+  {
+    
+    this.dialog.open(OrderDetailsComponent, {
+      width: '80%',
+      height:'30%',
+      data: order
+    });
+  }
   // datasource: any = [
   //   {
   //     order_id: 1,

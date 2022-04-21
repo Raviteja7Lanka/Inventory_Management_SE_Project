@@ -140,7 +140,7 @@ func DeleteProduct(w http.ResponseWriter, r *http.Request) {
 	//var products models.Products
 	queryParams := mux.Vars(r)
 	fmt.Println(queryParams["prodId"])
-	er := db.Exec("delete from products where product_id=?", queryParams["prodId"]).Error
+	er := db.Exec("delete from products where products_id=?", queryParams["prodId"]).Error
 	if er != nil {
 		json.NewEncoder(w).Encode("{Status:201, Message: Internal Error}")
 	}
