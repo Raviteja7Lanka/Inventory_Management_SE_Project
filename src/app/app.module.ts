@@ -58,6 +58,7 @@ import { CategoryCreateComponent } from './services/category-create/category-cre
 import { ProfileComponent } from './profile/profile.component';
 import { OrderDetailsComponent } from './orders/order-details/order-details.component';
 import { ViewOrdersComponent } from './supplier-table/view-orders/view-orders.component';
+import { ViewCustomerOrdersComponent } from './customer-table/view-customer-orders/view-customer-orders.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { ViewOrdersComponent } from './supplier-table/view-orders/view-orders.co
     ProfileComponent,
     OrderDetailsComponent,
     ViewOrdersComponent,
+    ViewCustomerOrdersComponent,
   ],
   imports: [
     BrowserModule,

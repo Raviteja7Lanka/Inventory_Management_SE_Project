@@ -71,7 +71,8 @@
     <ng-container matColumnDef="otherDetails">
       <th class="tbheader" mat-header-cell *matHeaderCellDef></th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        <a href="#">view orders</a>
+        <button mat-raised-button (click)="viewOrders(element)">View Orders</button>
+        <button mat-raised-button color="warn" (click)="deleteCustomer(element)">Delete</button>
       </td>
     </ng-container>
 
