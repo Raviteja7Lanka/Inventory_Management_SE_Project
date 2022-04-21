@@ -84,10 +84,12 @@ export class ProgressordersComponent implements OnInit {
     
     this.dialog.open(OrderDetailsComponent, {
       width: '80%',
-      height:'60%',
+      height:'30%',
       data: order
     });
   }
+
+
   markOrderComplete(order:any)
   {
     if(order!=null)
@@ -97,6 +99,7 @@ export class ProgressordersComponent implements OnInit {
     this.http.put<any>(`http://localhost:8085/orders/${order.order_id}`,order)
     .subscribe(res=>{
       alert("Order Marked Complete");
+      location.reload();
       
       // this .router.navigate(['warehouse']);
     },err=>{

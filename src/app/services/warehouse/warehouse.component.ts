@@ -38,7 +38,15 @@ export class WarehouseComponent implements OnInit {
     // this.router.navigate(['/user/raja'], navigationExtras);
     this.router.navigate(["/warehouse-categories"], navigationExtras);
   }
-  
+  deleteWarehouse(warehouse:any)
+  {
+    let ware_id= warehouse['warehouse_id']
+    this.http.delete<any>(`http://localhost:8085/warehouse/${ware_id}`).subscribe(res => {
+      console.log(res);
+    });
+    location.reload();
+    
+  }
 
 }
 export interface ResponseBody {

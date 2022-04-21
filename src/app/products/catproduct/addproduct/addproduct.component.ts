@@ -26,7 +26,7 @@ export class AddproductComponent implements OnInit {
         product_name:[''],
         product_descr_ip_tion: [''],
         warehouse_id: [''],
-        product_id: parseInt((Math.random()*10000).toString()).toString(),
+        products_id: parseInt((Math.random()*10000).toString()).toString(),
         category_id:[''],
         product_status: [''],
         product_quantity: [''],

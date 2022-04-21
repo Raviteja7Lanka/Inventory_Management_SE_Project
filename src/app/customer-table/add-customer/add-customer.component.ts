@@ -32,6 +32,7 @@ export class AddCustomerComponent implements OnInit {
           alert('Customer Added Successfully');
           this.addCustomerForm.reset();
           this.dialogRef.close();
+          location.reload()
         },
         error: () => {
           alert(
