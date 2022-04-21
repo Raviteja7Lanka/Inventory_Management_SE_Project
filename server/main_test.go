@@ -16,4 +16,5 @@ func TestRootEndPoint(t *testing.T) {
 	response := httptest.NewRecorder()
 	router.ServeHTTP(response, request)
 	assert.Equal(t, 200, response.Code, "OK response is expected")
+	//fmt.Println("Database is connected")
 }

@@ -28,10 +28,11 @@ func TestGetSuppliers(t *testing.T) {
 		fmt.Println("err is ", err)
 	}
 
-	if len(suppliers) >= 0 {
+	if len(suppliers) >= 1 {
 		name := suppliers[0].NAME
 		address := suppliers[0].ADDRESS
 		fmt.Println(name, address)
+		fmt.Println("Atleast one customer order was returned")
 		assert.True(t, true, "Atleast one customer order was returned")
 	} else {
 		assert.Fail(t, "Atleast one order was expected")

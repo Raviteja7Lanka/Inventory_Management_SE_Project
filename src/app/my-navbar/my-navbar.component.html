@@ -33,21 +33,25 @@
   <button mat-menu-item>Item 1</button>
   <button mat-menu-item>Item 2</button>
       </mat-menu> -->
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+        id="menutoggleright"
+      >
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/profile">
+        <button mat-menu-item routerLink="/profile" id="profile">
           <mat-icon>perm_identity</mat-icon>
           <span>profile</span>
         </button>
-        <button mat-menu-item routerLink="/login" color="accent">
+        <button mat-menu-item routerLink="/login" color="accent" id="logout">
           <mat-icon>exit_to_app</mat-icon>
           <span>Logout</span>
         </button>
       </mat-menu>
 
-      
       <!-- <a mat-button>About</a>
         <a mat-raised-button color="accent">Sign up</a> -->
     </mat-toolbar>
