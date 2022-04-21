@@ -12,10 +12,11 @@ Backend: Surya Mandapati, Sai Kiran Madipadige.
 
 
 ### Demo Video Link:
-[Demo Video Link]()
+[Demo Video Link](https://youtu.be/Mr3VQCEiDh0)
 
 ### Cypress Test & unit Test vedio:
-[Demo Video Link]()
+[Demo Video cypress testing Link](https://youtu.be/6PS4V9Guc10)
+[Demo Video Karma Unit testing Link](https://youtu.be/EWUQrRcEp4M)
 
 ### Result of the Unit Test Cases
 <img width="1439" alt="KarmaScreenshot" src="https://user-images.githubusercontent.com/94930984/161365933-b1b74263-e2fa-4d1f-90b1-b26280e48666.png">
@@ -25,15 +26,16 @@ Backend: Surya Mandapati, Sai Kiran Madipadige.
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ### Backend Unit Test video:
-
+[Demo Video unit testing Link]
 
 ### Link to API Documentation:
 
+
 ### Link for the Project Board:
+[Project board](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project)
 
 ### Link for Sprint_4 Deliverables:
-
-### Bonus Deploy Production link:
+[Deliverables](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/projects/4)
 
 ### Further help
 
