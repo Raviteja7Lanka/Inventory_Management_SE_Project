@@ -15,6 +15,7 @@ export class OrdersComponent implements OnInit {
   ngOnInit(): void {}
 
   add_order() {
+    
     this.dialog.open(AddorderComponent, {
       width: '40%',
     });
