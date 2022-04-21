@@ -56,6 +56,8 @@ import { EditorderComponent } from './orders/editorder/editorder.component';
 import { DeleteorderComponent } from './orders/deleteorder/deleteorder.component';
 import { CategoryCreateComponent } from './services/category-create/category-create.component';
 import { ProfileComponent } from './profile/profile.component';
+import { OrderDetailsComponent } from './orders/order-details/order-details.component';
+import { ViewOrdersComponent } from './supplier-table/view-orders/view-orders.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,8 @@ import { ProfileComponent } from './profile/profile.component';
     DeleteorderComponent,
     CategoryCreateComponent,
     ProfileComponent,
+    OrderDetailsComponent,
+    ViewOrdersComponent,
   ],
   imports: [
     BrowserModule,

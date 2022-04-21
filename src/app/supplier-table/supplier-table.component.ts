@@ -5,6 +5,7 @@ import { ApiService } from '../services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { DeleteSupplierComponent } from './delete-supplier/delete-supplier.component';
 import { EditSupplierComponent } from './edit-supplier/edit-supplier.component';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-supplier-table',
@@ -12,7 +13,7 @@ import { EditSupplierComponent } from './edit-supplier/edit-supplier.component';
   styleUrls: ['./supplier-table.component.css'],
 })
 export class SupplierTableComponent implements OnInit {
-  constructor(private dialog: MatDialog, private api: ApiService) {}
+  constructor(private dialog: MatDialog, private api: ApiService,private router:Router) {}
   datasource: any = [];
   ngOnInit(): void {
     this.api.getAllSuppliers().subscribe({
@@ -60,6 +61,18 @@ export class SupplierTableComponent implements OnInit {
   
   */
   // datasource = supplierData;
+  viewOrders(supplier:any)
+  {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        supplier: supplier
+      }
+    };
+    // this.router.navigate(['/user/raja'], navigationExtras);
+    this.router.navigate(["/view-orders"], navigationExtras);
+
+  }
+
 }
 export interface suppliers {
   supplierId: number;

@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { OrderDetailsComponent } from '../order-details/order-details.component';
 
 @Component({
   selector: 'app-progressorders',
@@ -60,26 +62,47 @@ export class ProgressordersComponent implements OnInit {
     //   order_Details: 'nothing',
     // },
   ];
-  constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private router: Router
-  ) {}
+  constructor(private dialog: MatDialog,private formBuilder:FormBuilder,private http:HttpClient, private router:Router) {}
 
   ngOnInit(): void {
-    this.http
-      .get<any>(`http://localhost:8085/order/status/in_progress`)
-      .subscribe((res) => {
-        this.datasource = res;
-        console.log(res);
-      });
+
+    this.http.get<any>(`http://localhost:8085/orders/status/in_progress`).subscribe(res => {
+      this.datasource=res;
+      console.log(res)
+  });   
+
   }
 
   displayedColumns = [
     'order_id',
     'date_of_order',
     'order_type',
-    'order_Details',
+    'action',
   ];
-  viewOrderDetails(element: any) {}
+  viewOrderDetails(order:any)
+  {
+    
+    this.dialog.open(OrderDetailsComponent, {
+      width: '80%',
+      height:'60%',
+      data: order
+    });
+  }
+  markOrderComplete(order:any)
+  {
+    if(order!=null)
+    {
+      order.order_status="completed"
+    }
+    this.http.put<any>(`http://localhost:8085/orders/${order.order_id}`,order)
+    .subscribe(res=>{
+      alert("Order Marked Complete");
+      
+      // this .router.navigate(['warehouse']);
+    },err=>{
+      alert("something went wrong")
+    }); 
+    
+  }
+
 }

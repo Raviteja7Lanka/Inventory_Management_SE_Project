@@ -19,6 +19,8 @@ import { CatproductComponent } from './products/catproduct/catproduct.component'
 import { CategoriesComponent } from './services/categories/categories.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoryCreateComponent } from './services/category-create/category-create.component';
+import { OrderDetailsComponent } from './orders/order-details/order-details.component';
+import { ViewOrdersComponent } from './supplier-table/view-orders/view-orders.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -47,7 +49,9 @@ const routes: Routes = [
        { path: 'warehouse-categories',component:CategoriesComponent},
        { path: 'category-create',component:CategoryCreateComponent},
        { path: 'category-products',component:CatproductComponent},
-       { path: 'profile',component:ProfileComponent}
+       { path: 'profile',component:ProfileComponent},
+       { path: 'order_details',component:OrderDetailsComponent},
+       { path: 'view-orders',component:ViewOrdersComponent}
     ],
   },
 

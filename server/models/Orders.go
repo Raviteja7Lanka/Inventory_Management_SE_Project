@@ -13,6 +13,7 @@ type Orders struct {
 	OrderDetailsId string `json:"order_details_id"`
 	OrderType      string `json:"order_type"`
 	OrderStatus    string `json:"order_status"`
+	Order_by       string `json:"order_by"`
 }
 
 func init() {

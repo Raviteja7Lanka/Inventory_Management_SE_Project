@@ -12,7 +12,7 @@
     <ng-container matColumnDef="date_of_order">
       <th class="tbheader" mat-header-cell *matHeaderCellDef>Date</th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        {{ element.date_of_order }}
+        {{ element.date_of_order}}
       </td>
     </ng-container>
 
@@ -26,10 +26,18 @@
       </td>
     </ng-container>
 
-    <ng-container matColumnDef="order_Details">
-      <th class="tbheader" mat-header-cell *matHeaderCellDef>Details</th>
+
+    <ng-container matColumnDef="action">
+      <th class="tbheader" mat-header-cell *matHeaderCellDef>Action</th>
       <td class="tbdata" mat-cell *matCellDef="let element">
-        <a href="#" (onclick)="viewOrderDetails(element)" )>View Details</a>
+        <table>
+          <tbody>
+            <tr>
+         <td><button mat-raised-button (click)="viewOrderDetails(element)">View Details</button></td>
+        <td><button mat-raised-button (click)="markOrderComplete(element)">Mark Complete</button> </td>
+        </tr>
+        </tbody>
+        </table>
       </td>
     </ng-container>
 

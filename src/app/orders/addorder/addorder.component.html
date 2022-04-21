@@ -1,96 +1,66 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <h2>New Order Request</h2>
-      <form [formGroup]="addOrderForm" (ngSubmit)="addOrder()">
-        <!-- -->
-        <div class="form-group">
-          <label for="order_name">Order Name</label>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="order_name"
-            id="order_name"
-          />
-        </div>
-        <br />
-
-        <div class="form-group">
-          <label for="order_descr_ip_tion">Order Description</label>
-          <textarea
-            class="form-control"
-            formControlName="order_descr_ip_tion"
-            id="order_descr_ip_tion"
-            rows="3"
-          ></textarea>
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="order_price">Price</label>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="order_price"
-            id="order_price"
-            rows="3"
-          />
-        </div>
-        <br />
-        <!-- <div class="form-group" >
-                <label for="supplier_id"><h3>Select Supplier</h3></label>
-                <select class="form-control" formControlName="supplier_id" id="supplier_id" >
-                  <option *ngFor="let supplier of suppliers" value="{{supplier.supplier_id}}" >{{supplier.name}}</option>
+    <div class="row">
+      <div class="col-sm">
+        <h2>New Order Request</h2>
+        <form [formGroup]="addOrderForm" (ngSubmit)="addOrder()" > 
+            <!-- -->
+            <div class="form-group" >
+            <label for="start">Order date:</label>
+            <input type="date" id="order_date" formControlName="order_date">
+             </div><br>
+               <div class="form-group" >
+                <label for="order_type">Select Order Type</label>
+                <select class="form-control" #OrderType
+                (change)='onOrderTypeSelected(OrderType.value)'formControlName="order_type" id="order_type" >
+                  <option class="option" value="Customer" selected>Customer</option>
+                  <option class="option" value="Supplier" >Supplier</option>
                 </select>
-              </div><br><br> -->
-        <div class="form-group">
-          <label for="order_unit">Order Measurement Units</label>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="order_unit"
-            id="order_unit"
-            rows="3"
-          />
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="order_quantity">Order Volume in cubic cm.</label>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="order_quantity"
-            id="order_quantity"
-            rows="3"
-          />
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="other_details">Order Description</label>
-          <textarea
-            class="form-control"
-            formControlName="other_details"
-            id="other_details"
-            rows="3"
-          ></textarea>
-        </div>
-        <br />
-        <div class="row">
-          <div class="col-md-6">
-            <button type="submit" class="btn btn-primary mb-2">Add</button>
-          </div>
-          <div class="col-md-6">
-            <button
-              type="submit"
-              class="btn btn-primary mb-2"
-              (click)="closeAddOrder()"
-            >
-              close
-            </button>
-          </div>
-        </div>
-      </form>
+              </div><br>
+              <!-- Product list needs to be added here-->
+              <div class="form-group" >
+                <label for="order_by">Ordered By</label>
+              <select class="form-control" formControlName="order_by" id="order_by" >
+                <ng-container *ngIf="type_order=='Customer'">
+                  <option *ngFor="let cust of customers" [value]="cust.customer_id" >{{cust.first_name}}</option>
+                  </ng-container>
+                  <ng-container *ngIf="type_order=='Supplier'">
+                    <option *ngFor="let supp of suppliers" [value]="supp.supplier_id" >{{supp.name}}</option>
+                    </ng-container>
+              </select>
+            </div><br>
+
+                     <div class="form-group" >
+                        <label for="quantity">Order Quantity</label>
+                        <input type="text" id="quantity" formControlName="quantity">
+                     </div><br>
+                     <div class="form-group" >
+                        <label for="discount">Discount</label>
+                        <input type="text" id="discount" formControlName="discount">
+                     </div><br>
+                     <div class="form-group" >
+                        <label for="payment_type">Select Payment Type</label>
+                        <select class="form-control" formControlName="payment_type" id="order_type" >
+                          <option value="card" >Card</option>
+                          <option value="cash" >Cash</option>
+                          <!-- <option value="outstanding" >Outstanding</option> -->
+                        </select>
+                      </div><br>
+                    <div class="form-group" >
+                       <label for="other_details">Other Details</label>
+                       <textarea class="form-control" formControlName="other_details" id="other_details" rows="3"></textarea>
+                    </div><br>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary mb-2">Add</button>
+                      </div>
+          </form>
+      </div>
+      <div class="col-sm">
+        
+      </div>
+      <div class="col-sm">
+        
+      </div>
     </div>
     <div class="col-sm"></div>
     <div class="col-sm"></div>
   </div>
-</div>
