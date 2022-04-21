@@ -1,18 +1,18 @@
 ## Description:
 Inventory management, also known as stock control, is the process of managing a company’s inventory levels in one or multiple locations or warehouses. Basically, tracking items, orders from customers, orders placed to suppliers and making sure the business keeps the optimal number of parts or products in stock, whether it’s online, on the shelf, or both. An inventory control system also watches your products’ usage and storage,  its stock room arrival up to customer shipment arrival.
 
-It helps in the removal of slow-selling products and increasing the number of high-selling, you’ll maximize your profits, while saving time, resources, and money with the least amount of inventory sitting in your warehouse.
+It helps in the removal of slow-selling products and increasing the number of high-selling, so that a company caan maximize their profits, while saving on time, resources, and money with optimal inventory sitting in the warehouse.
 
 
 
 ## Team Members:
-Frontend: Ravi Teja Lanka, Nithin Meela.
+Frontend: Ravi Teja Lanka, Nithin Meela, Sai kiran Madipadige
 
 Backend: Surya Mandapati, Sai Kiran Madipadige.
 
 
 ### Demo Video Link:
-[Demo Vedio Link]()
+[Demo Video Link]()
 
 ### Cypress Test & unit Test vedio:
 [Demo Video Link]()
@@ -24,7 +24,7 @@ Backend: Surya Mandapati, Sai Kiran Madipadige.
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### Backend Unit Test vedio:
+### Backend Unit Test video:
 
 
 ### Link to API Documentation:
