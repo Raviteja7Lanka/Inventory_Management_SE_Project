@@ -24,14 +24,13 @@ jobs:
       with:
           persist-credentials: false
 
-    - name: Install dependencies
+    - name: Build
       run: |
         npm install
-        CI=false npm run build
-      
-    - name: Deploy to gh-pages
+        npm run deploy
+    - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: dist # The folder the action should deploy.
+        BRANCH: gh-pages
+        FOLDER: dist/inventory-management
