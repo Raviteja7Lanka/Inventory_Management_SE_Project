@@ -5,7 +5,7 @@ Project Name: Inventory Management
 Team: 
 Ravi Teja Lanka. 
 Sai Kiran Madipadige. 
-Surya Mandapati. 
+Venkata Surya Narayana Raju Mandapati. 
 Nithin Meela.
 
 FrontEnd:
