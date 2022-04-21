@@ -13,7 +13,7 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./supplier-table.component.css'],
 })
 export class SupplierTableComponent implements OnInit {
-  constructor(private dialog: MatDialog, private api: ApiService,private router:Router) {}
+  constructor(private dialog: MatDialog, private api: ApiService,private router:Router, private http: HttpClient) {}
   datasource: any = [];
   ngOnInit(): void {
     this.api.getAllSuppliers().subscribe({
@@ -71,6 +71,16 @@ export class SupplierTableComponent implements OnInit {
     // this.router.navigate(['/user/raja'], navigationExtras);
     this.router.navigate(["/view-orders"], navigationExtras);
 
+  }
+
+  deleteSupplier(supplier:any)
+  {
+    let supplier_id= supplier['supplier_id']
+    this.http.delete<any>(`http://localhost:8085/supplier/${supplier_id}`).subscribe(res => {
+      console.log(res);
+      location.reload();
+    });
+  
   }
 
 }
