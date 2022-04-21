@@ -5,10 +5,8 @@ It helps in the removal of slow-selling products and increasing the number of hi
 
 
 
-## Team Members:
-Frontend: Ravi Teja Lanka, Nithin Meela, Sai kiran Madipadige
 
-Backend: Surya Mandapati, Sai Kiran Madipadige.
+
 
 
 ### Demo Video Link:
@@ -33,8 +31,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 
 ### Link for the Project Board:
-[Project board](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project)
-
+[Sprint_1 board](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/projects/1)
+[Sprint_2 board](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/projects/2)
+[Sprint_3 board](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/projects/3)
+[Sprint_4 board](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/projects/4)
 ### Link for Sprint_4 Deliverables:
 [Deliverables](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/projects/4)
 
