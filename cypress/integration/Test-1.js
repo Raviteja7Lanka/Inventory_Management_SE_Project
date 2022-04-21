@@ -44,7 +44,7 @@ describe("Test for Cards in the Home Page", function () {
     cy.contains("Warehouse");
   });
 
-  it("Checks whether the Reports Card is Leading to the Warehouse Page or not ", function () {
+  it("Checks whether the Reports Card is Leading to the Reports Page or not ", function () {
     cy.visit("http://localhost:4200/home");
     cy.get("#Reports").click();
     cy.contains("layout");
@@ -68,12 +68,60 @@ describe("Test For Orders Page", function () {
     cy.visit("http://localhost:4200/orders");
     cy.get("#add-order");
   });
-  it("Checks whether the Delete Order Button is present and bringing the dialog", function () {
-    cy.visit("http://localhost:4200/orders");
-    cy.get("#delete-order");
+  // it("Checks whether the Delete Order Button is present and bringing the dialog", function () {
+  //   cy.visit("http://localhost:4200/orders");
+  //   cy.get("#delete-order");
+  // });
+  // it("Checks whether the Edit Order Button is present and bringing the dialog", function () {
+  //   cy.visit("http://localhost:4200/orders");
+  //   cy.get("#edit-order");
+  // });
+});
+
+describe("Test For Going Back to Login Page upon Clicking logout button", function () {
+  it("Checks whether the logout button is present in the toggle or not", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#menutoggleright").click();
+    cy.contains("Logout");
   });
-  it("Checks whether the Edit Order Button is present and bringing the dialog", function () {
-    cy.visit("http://localhost:4200/orders");
-    cy.get("#edit-order");
+  it("Checks whether the profile button is present in the toggle or not", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#menutoggleright").click();
+    cy.contains("profile");
+    cy.get("#profile").click();
+  });
+  it("checks whether the logout button is leading to sigin page or not", function () {
+    cy.visit("http://localhost:4200/home");
+    cy.get("#menutoggleright").click();
+    cy.get("#logout").click();
+    cy.contains("Login");
+  });
+});
+
+describe("Test for Login Page", function () {
+  it("Checks whether the Create new account is leading to the signup page or not", function () {
+    cy.visit("http://localhost:4200/login");
+    cy.get("#createnewaccount").click();
+    cy.contains("Sign");
+  });
+  it("Checks whether the Forgot password is leading to the forgot password ", function () {
+    cy.visit("http://localhost:4200/login");
+    cy.get("#forgotpassword").click();
+    cy.contains("Forgot");
+  });
+});
+
+describe("Test for Signup Page", function () {
+  it("Checks whether the already registered is leading back to login or not", function () {
+    cy.visit("http://localhost:4200/signup");
+    cy.contains("Forgot");
+    cy.get("#forgotpassword").click();
+    cy.contains("Forgot");
+  });
+  it("Checks whether the already registered is leading back to login", function () {
+    cy.visit("http://localhost:4200/signup");
+    cy.contains("Already");
+    cy.get("#alreadyregistered").click();
+    cy.contains("Login");
   });
 });
